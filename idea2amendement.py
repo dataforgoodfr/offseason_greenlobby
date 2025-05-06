@@ -4,6 +4,7 @@ import time
 import os
 from tqdm import tqdm
 
+  
 # Instancie un client OpenAI
 client = openai.OpenAI(api_key='XXXX')
 
