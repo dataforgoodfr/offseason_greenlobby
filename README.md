@@ -4,7 +4,68 @@
     <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
 </a>
 
-Recherche d'éléments de language dans les amendements sur les projets de lois
+Recherche d'éléments de language dans les amendements apportés par différents partis politique sur des projets de loi.
+
+# 1. Set API keys as environment vars
+
+To add your OpenAI/Mistral API key as an environment variable, follow these steps depending on your operating system and environment:
+
+---
+
+### 🖥️ For Unix/Linux/macOS (Terminal or Server)
+
+#### Temporarily (only for the current session)
+
+```bash
+export OPENAI_API_KEY="your-api-key-here"
+```
+
+#### Permanently (for all sessions)
+
+1. Open your shell profile config file (e.g., `~/.bashrc`, `~/.zshrc`, or `~/.bash_profile`) in a text editor:
+
+   ```bash
+   nano ~/.bashrc  # or ~/.zshrc for Zsh users
+   ```
+2. Add the line:
+
+   ```bash
+   export OPENAI_API_KEY="your-api-key-here"
+   ```
+3. Save and exit, then apply changes:
+
+   ```bash
+   source ~/.bashrc  # or source ~/.zshrc
+   ```
+
+---
+
+### 🪟 For Windows (Command Prompt / PowerShell)
+
+#### For Command Prompt (CMD)
+
+```cmd
+set OPENAI_API_KEY=your-api-key-here
+```
+
+#### For PowerShell
+
+```powershell
+$env:OPENAI_API_KEY = "your-api-key-here"
+```
+
+#### Permanently via System Environment Variables
+
+1. Press `Win + R`, type `sysdm.cpl`, and hit Enter.
+2. Go to the **Advanced** tab → **Environment Variables**.
+3. Under **User variables** or **System variables**, click **New**.
+4. Set:
+
+   * **Name**: `OPENAI_API_KEY`
+   * **Value**: `your-api-key-here`
+5. Click OK, and restart your terminal or IDE to apply changes.
+
+
 
 ## Project Organization
 
