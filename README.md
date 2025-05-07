@@ -101,5 +101,34 @@ export OPENAI_API_KEY="your-api-key-here"
    ```
 
 
-### 2. .....
+### 2. Run
 
+python run_classification.py \
+    --model_name ministral-3b-latest \
+    --provider mistral \
+    --prompt mistral_1 \
+    --batch_size 5 \
+    --delay 0 \
+    --input_file processed/labeled_idees_1.csv \
+    --output_file results/predictions/mistral_predictions.csv
+
+python run_classification.py \
+    --model_name gpt-3.5-turbo \
+    --provider openai \
+    --prompt openai_1 \
+    --batch_size 2 \
+    --delay 0 \
+    --input_file processed/labeled_idees_1.csv \
+    --output_file results/predictions/openai_predictions.csv
+
+
+    temperature, 
+    
+Evaluate results:
+
+bash
+Copier
+Modifier
+python scripts/evaluate_results.py \
+    --predictions_file results/predictions/openai_predictions.csv \
+    --labels_file data/labels.csv
