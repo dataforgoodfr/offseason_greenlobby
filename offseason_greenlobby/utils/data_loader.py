@@ -19,7 +19,7 @@ def load_data(file_path: str):
         amendements_df, 
         labelled_df, 
         left_on='Nom du fichier', 
-        right_on='Listes des amendements', how='inner')
+        right_on='NOM_AMENDEMENT', how='inner')
     
     print("Number of samples to classify: ",merged_df.shape[0])
     return merged_df

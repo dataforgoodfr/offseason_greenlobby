@@ -3,6 +3,7 @@ import time
 import pandas as pd
 from mistralai import Mistral
 from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
+from config import COL_IDEES,COL_DESCRIPTION
 
 
 class MistralModel:
@@ -36,13 +37,13 @@ class MistralModel:
         for start in range(0, len(df), batch_size):
             end = start + batch_size
             batch = df.iloc[start:end]
-            print(batch)
+
             for _, row in batch.iterrows():
                 try:
                     prompt = prompt_template.format(
                         EXPOSE_SOMMAIRE=row["ExposeSommaire"],
-                        IDEE=row["Idées"],
-                        DESCRIPTION=row["En faveur "]
+                        IDEE=row[COL_IDEES],
+                        DESCRIPTION=row[COL_DESCRIPTION]
                     )
                     response = self.classify(prompt,temperature)
                     responses.append(response)

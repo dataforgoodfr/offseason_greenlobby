@@ -1,5 +1,5 @@
 import os
-import time
+from config import COL_IDEES,COL_DESCRIPTION
 import pandas as pd
 import openai
 from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
@@ -54,8 +54,8 @@ class OpenAIModel:
                 content = self.classify(
                     exposes_sommaires = [row["ExposeSommaire"] for _, row in batch.iterrows()],
                     instruct_system = prompt_template.format(
-                        IDEE=batch["Idées"].values[0],
-                        DESCRIPTION=batch["Idées"].values[0]
+                        IDEE=batch[COL_IDEES].values[0],
+                        DESCRIPTION=batch[COL_DESCRIPTION].values[0]
                     ),temperature=temperature
                 )
 

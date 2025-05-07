@@ -7,7 +7,7 @@ from modeling.open_ai import OpenAIModel
 from modeling.mistral import MistralModel
 from utils.data_loader import load_data
 from utils.data_loader import load_prompt
-from config import DATA_DIR
+from config import DATA_DIR,COL_DESCRIPTION,COL_IDEES,COL_LABEL,COL_NOM_AMENDEMENT
 
 def main(model_name, provider, input_file, output_file, prompt, batch_size, delay, temperature):
     
@@ -15,10 +15,10 @@ def main(model_name, provider, input_file, output_file, prompt, batch_size, dela
     data = load_data(input_file)
 
     # Parse data
-    idees = data['Idées'].tolist()     # Idees
-    exposesommaire = data['ExposeSommaire'].tolist()     # Idees
-    description = data['Description'].tolist()     # Description
-    labels = data['En faveur '].tolist()     # Label
+    idees = data[COL_IDEES].tolist()     # Idees
+    exposesommaire = data[COL_NOM_AMENDEMENT].tolist()     # Idees
+    description = data[COL_DESCRIPTION].tolist()     # Description
+    labels = data[COL_LABEL].tolist()     # Label
 
     # Select a model provider
     if provider == 'openai':
@@ -88,7 +88,7 @@ if __name__ == "__main__":
     parser.add_argument('--prompt', type=str, required=True, help='Select a prompt in the Json file containing the prompts [data/prompts/prompts.json]')
     parser.add_argument('--batch_size', type=str, default=0, help='Select a batch size ')
     parser.add_argument('--delay', type=str, default=0, help='Delay to wait between batches')
-    parser.add_argument('--input_file', type=str, required=True, help='Path to input CSV file. Columns = [Idées,Description,Listes des amendements,En faveur ]')
+    parser.add_argument('--input_file', type=str, required=True, help='Path to input CSV file. Columns = [IDEES,DESCRIPTION,NOM_AMENDEMENT,LABEL]')
     parser.add_argument('--output_file', type=str, required=True, help='Path to save predictions.')
     parser.add_argument('--temperature', type=str, default=0, help='Temperature of model.')
 
