@@ -7,58 +7,7 @@
 Recherche d'éléments de language dans les amendements apportés par différents partis politique sur des projets de loi.
 
 
-## Project Organization
-
-```
-├── LICENSE            <- Open-source license if one is chosen
-├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
-├── README.md          <- The top-level README for developers using this project.
-├── data
-│   ├── external       <- Data from third party sources.
-│   ├── interim        <- Intermediate data that has been transformed.
-│   ├── processed      <- The final, canonical data sets for modeling.
-│   └── raw            <- The original, immutable data dump.
-│
-├── docs               <- A default mkdocs project; see www.mkdocs.org for details
-│
-├── models             <- Trained and serialized models, model predictions, or model summaries
-│
-├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-│                         the creator's initials, and a short `-` delimited description, e.g.
-│                         `1.0-jqp-initial-data-exploration`.
-│
-├── pyproject.toml     <- Project configuration file with package metadata for 
-│                         offseason_greenlobby and configuration for tools like black
-│
-├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-│
-├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-│   └── figures        <- Generated graphics and figures to be used in reporting
-│
-├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-│                         generated with `pip freeze > requirements.txt`
-│
-├── setup.cfg          <- Configuration file for flake8
-│
-└── offseason_greenlobby   <- Source code for use in this project.
-    │
-    ├── __init__.py             <- Makes offseason_greenlobby a Python module
-    │
-    ├── config.py               <- Store useful variables and configuration
-    │
-    ├── dataset.py              <- Scripts to download or generate data
-    │
-    ├── features.py             <- Code to create features for modeling
-    │
-    ├── modeling                
-    │   ├── __init__.py 
-    │   ├── predict.py          <- Code to run model inference with trained models          
-    │   └── train.py            <- Code to train models
-    │
-    └── plots.py                <- Code to create visualizations
-```
-
-## Run code
+## Steps to use code base
 
 Follow these steps to be able to run the code.
 
@@ -109,7 +58,7 @@ Next it is required to install the different dependencies required to run the co
 
 ### 3. Run code
 
-##### 3.1 Classification
+### 3.1 Classification
 
 To run the classification script you need to locate yourself in the `offseason_greenlobby/offseason_greenlobby/` folder. 
 
@@ -118,6 +67,10 @@ To run the classification script you need to locate yourself in the `offseason_g
    ```
 
 Then you need to run the `run_classification.py` script using python. 
+
+The important parts are:
+- The prompt to be used has to be stored in the `data/prompts/prompts.json` file with a specific name.
+- The labeled dataset needs to have a specific format: `IDEES`,`DESCRIPTION`,`NOM_AMENDEMENT`,`LABEL`.
 
 Here is an example of how to do it with some parameters:
 
@@ -151,7 +104,7 @@ options:
                         Select a batch size
   --delay DELAY         Delay to wait between batches
   --input_file INPUT_FILE
-                        Path to input CSV file. Columns = [Idées,Description,Listes des amendements,En faveur ]
+                        Path to input CSV file. Columns = [IDEES,DESCRIPTION,NOM_AMENDEMENT,LABEL]
   --output_file OUTPUT_FILE
                         Path to save predictions.
   --temperature TEMPERATURE
@@ -159,11 +112,7 @@ options:
 ```
 
     
-Evaluate results:
+### 3.1 Evaluate Results 
 
-bash
-Copier
-Modifier
-python scripts/evaluate_results.py \
-    --predictions_file results/predictions/openai_predictions.csv \
-    --labels_file data/labels.csv
+TODO TODO TODO
+
