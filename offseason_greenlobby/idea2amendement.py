@@ -4,9 +4,23 @@ import time
 import os
 from tqdm import tqdm
 
-  
+# Get OpenAI API KEY
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+if not OPENAI_API_KEY:
+    raise EnvironmentError("Missing OPENAI_API_KEY in environment variables.")
+
+# Fichiers
+input_file = 'data/processed/amendements.csv'
+output_file = '/Users/thibaut/downloads/resultats_analyse.csv'
+
+
+
+
+
+
+
 # Instancie un client OpenAI
-client = openai.OpenAI(api_key='XXXX')
+client = openai.OpenAI(api_key=OPENAI_API_KEY)
 
 # Fichiers
 input_file = '/Users/thibaut/Downloads/amendements.csv'
