@@ -99,30 +99,65 @@ export OPENAI_API_KEY="your-api-key-here"
    ```bash
    source ~/.bashrc  # or source ~/.zshrc
    ```
+### 2. Install requirements
 
+Next it is required to install the different dependencies required to run the code. 
 
-### 2. Run
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-python run_classification.py \
-    --model_name ministral-3b-latest \
-    --provider mistral \
-    --prompt mistral_1 \
-    --batch_size 5 \
-    --delay 0 \
-    --input_file processed/labeled_idees_1.csv \
-    --output_file results/predictions/mistral_predictions.csv
+### 3. Run code
 
+##### 3.1 Classification
+
+To run the classification script you need to locate yourself in the `offseason_greenlobby/offseason_greenlobby/` folder. 
+
+```bash
+   cd offseason_greenlobby
+   ```
+
+Then you need to run the `run_classification.py` script using python. 
+
+Here is an example of how to do it with some parameters:
+
+```bash
 python run_classification.py \
     --model_name gpt-3.5-turbo \
     --provider openai \
     --prompt openai_1 \
-    --batch_size 2 \
+    --batch_size 3 \
     --delay 0 \
     --input_file processed/labeled_idees_1.csv \
     --output_file results/predictions/openai_predictions.csv
+```
 
+Here is the help from this command to get the detailled view of the parameters to be used:
 
-    temperature, 
+```bash
+usage: run_classification.py [-h] --model_name MODEL_NAME --provider {openai,mistral} --prompt PROMPT [--batch_size BATCH_SIZE] [--delay DELAY] --input_file INPUT_FILE --output_file OUTPUT_FILE
+                             [--temperature TEMPERATURE]
+
+Run text classification using LLMs.
+
+options:
+  -h, --help            show this help message and exit
+  --model_name MODEL_NAME
+                        Model name to use.
+  --provider {openai,mistral}
+                        LLM provider.
+  --prompt PROMPT       Select a prompt in the Json file containing the prompts [data/prompts/prompts.json]
+  --batch_size BATCH_SIZE
+                        Select a batch size
+  --delay DELAY         Delay to wait between batches
+  --input_file INPUT_FILE
+                        Path to input CSV file. Columns = [Idées,Description,Listes des amendements,En faveur ]
+  --output_file OUTPUT_FILE
+                        Path to save predictions.
+  --temperature TEMPERATURE
+                        Temperature of model.
+```
+
     
 Evaluate results:
 
