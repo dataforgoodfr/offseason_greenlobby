@@ -39,9 +39,10 @@ def main(model_name, provider, input_file, output_file, prompt, batch_size, dela
         end = time.time()
         print(f"Total execution time: {end - start:.5f} seconds")
 
+    # NO BATCH
     else:
         start = time.time()
-        # NO BATCH
+        # MISTRAL
         if provider == "mistral":
             predictions = [
                 model.classify(
@@ -52,7 +53,7 @@ def main(model_name, provider, input_file, output_file, prompt, batch_size, dela
                     ),
                     temperature=temperature) for id,expo,descr in zip(idees,exposesommaire,description)
                 ]
-            
+        # OPENAI
         elif provider == "openai":
             predictions = [
                 model.classify(
