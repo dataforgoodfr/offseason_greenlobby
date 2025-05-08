@@ -1,0 +1,34 @@
+accuracy,precision,recall,f1_score,prompt,idee,y_true,y_pred,time_eval
+1.0,1.0,1.0,1.0,"Tu es un assistant expert en analyse sémantique et en inférence.
+
+Ta tâche est de déterminer si un exposé sommaire d’amendement est en lien, même de manière implicite ou indirecte, avec une idée politique ou conceptuelle.
+
+Tu dois suivre ces étapes :
+1. Lire l’exposé sommaire et en donner un bref résumé.
+2. Identifier les thèmes, préoccupations ou objectifs présents, même s'ils ne sont pas formulés explicitement.
+3. Lire la description de l’idée et résumer les concepts clés qu’elle porte.
+4. Comparer les deux et indiquer si l’idée est en lien (même implicite) avec l’exposé.
+
+Réponds uniquement à la fin par ""Oui"" ou ""Non"".
+
+---
+
+Exposé sommaire :
+lourdeurs administratives = simplifier les procédures administratives
+
+---
+
+Idée : AMANR5L16PO791932BTC2600P0D1N004433.json
+
+Description de l’idée :
+réduire les démarches bureaucratiques complexes et chronophages
+
+---
+
+Analyse :
+1. Résumé de l’exposé :
+2. Thèmes identifiés :
+3. Concepts de l’idée :
+4. Comparaison sémantique :
+5. L’exposé est-il en lien (même implicite) avec cette idée ?
+Réponds uniquement par : 'oui' (si l'idée décrite est en lien indirect ou direct avec le contenu de l'exposé sommaire), 'non' (sinon). Ne donne aucune justification, seulement le terme demandé.",lourdeurs administratives = simplifier les procédures administratives,"['oui', 'oui']","['oui', 'oui']",2025-05-08 11:08:34.880457
