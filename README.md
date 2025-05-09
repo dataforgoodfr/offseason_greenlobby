@@ -75,21 +75,21 @@ The important parts are:
 Here is an example of how to do it with some parameters:
 
 ```bash
-python run_classification.py \
-    --model_name gpt-3.5-turbo \
+python run_classification.py \                                                                                   
+    --model_name gpt-4 \
     --provider openai \
-    --prompt openai_1 \
-    --batch_size 3 \
+    --prompt prompt_test \
+    --batch_size 0 \
     --delay 0 \
-    --input_file processed/labeled_idees_1.csv \
-    --output_file results/predictions/openai_predictions.csv
+    --input_file processed/lb_dataset.csv \
+    --output_file_pred ../data/results/predictions/gpt4turbo_prompt_test.csv
 ```
 
 Here is the help from this command to get the detailled view of the parameters to be used:
 
 ```bash
-usage: run_classification.py [-h] --model_name MODEL_NAME --provider {openai,mistral} --prompt PROMPT [--batch_size BATCH_SIZE] [--delay DELAY] --input_file INPUT_FILE --output_file OUTPUT_FILE
-                             [--temperature TEMPERATURE]
+usage: run_classification.py [-h] --model_name MODEL_NAME --provider {openai,mistral} --prompt PROMPT [--batch_size BATCH_SIZE] [--delay DELAY] --input_file INPUT_FILE
+                             --output_file_pred OUTPUT_FILE_PRED [--output_file_eval OUTPUT_FILE_EVAL] [--temperature TEMPERATURE] [--metrics_param METRICS_PARAM]
 
 Run text classification using LLMs.
 
@@ -105,10 +105,14 @@ options:
   --delay DELAY         Delay to wait between batches
   --input_file INPUT_FILE
                         Path to input CSV file. Columns = [IDEES,DESCRIPTION,NOM_AMENDEMENT,LABEL]
-  --output_file OUTPUT_FILE
+  --output_file_pred OUTPUT_FILE_PRED
                         Path to save predictions.
+  --output_file_eval OUTPUT_FILE_EVAL
+                        Output file
   --temperature TEMPERATURE
                         Temperature of model.
+  --metrics_param METRICS_PARAM
+                        List of metrics to plot. Default ["accuracy", "precision", "recall","f1_score"]
 ```
 
     
