@@ -112,7 +112,47 @@ options:
 ```
 
     
-### 3.1 Evaluate Results 
+### 3.2 Evaluate Results 
 
-TODO TODO TODO
+To run the evaluation script you need to locate yourself in the `offseason_greenlobby/offseason_greenlobby/` folder. Same as previously.
+
+```bash
+   cd offseason_greenlobby
+   ```
+
+Then you need to run the `run_eval_script.py` script using python. 
+
+The important parts are:
+- You need to provide the path to the previous output file that was generated. i.e.: `./data/results/predictions/mistral_predictions.csv`.
+
+Here is an example of how to do it with some parameters:
+
+```bash
+python run_eval_script.py \
+    --predictions_file ../data/results/predictions/mistral_predictions.csv \
+    --verbose True \
+    --save True \
+    --output_file ../data/results/eval/evaluations.csv \
+```
+
+Here is the help from this command to get the detailled view of the parameters to be used:
+
+```bash
+python run_eval_script.py -h
+usage: run_eval_script.py [-h] --predictions_file PREDICTIONS_FILE [--metrics_param METRICS_PARAM] [--verbose VERBOSE] [--save SAVE]
+                          [--output_file OUTPUT_FILE]
+
+Evaluate classification results.
+
+options:
+  -h, --help            show this help message and exit
+  --predictions_file PREDICTIONS_FILE
+                        Path to predictions CSV file.
+  --metrics_param METRICS_PARAM
+                        List of metrics to plot. Default ["accuracy", "precision", "recall","f1_score"]
+  --verbose VERBOSE     Boolean to plot or not to plot
+  --save SAVE           Decision to save evaluation output to output file.
+  --output_file OUTPUT_FILE
+                        Output file
+```
 
