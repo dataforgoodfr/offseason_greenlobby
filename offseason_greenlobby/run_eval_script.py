@@ -19,13 +19,17 @@ def main(predictions_file: str, metrics_param: list, verbose: bool, save: bool, 
     y_true = predictions[COL_LABEL].str.lower()
     y_pred = predictions[COL_PREDICTIONS].str.lower()
 
+    y_true = [str(x) for x in y_true]
+    y_pred = [str(x) for x in y_pred]
+
+
     # Compute the desired metrics 
     metrics = evaluate_classification(y_true, y_pred)
 
     metrics["prompt"] = [predictions['prompt'].values[0]]
     metrics["idee"] = [predictions['IDEES'].values[0]]
-    metrics["y_true"] = [y_true.to_list()]
-    metrics["y_pred"] = [y_pred.to_list()]
+    metrics["y_true"] = [y_true]
+    metrics["y_pred"] = [y_pred]
     metrics["time_eval"] = [datetime.now()]
 
 

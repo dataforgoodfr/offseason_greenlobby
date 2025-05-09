@@ -7,16 +7,25 @@ from modeling.open_ai import OpenAIModel
 from modeling.mistral import MistralModel
 from utils.data_loader import load_data
 from utils.data_loader import load_prompt
-from config import DATA_DIR,COL_DESCRIPTION,COL_IDEES,COL_NOM_AMENDEMENT
+from config import DATA_DIR,COL_DESCRIPTION,COL_IDEES,COL_EXPOSE_SOMMAIRE
+import argparse
+import pandas as pd
+from config import COL_LABEL,COL_PREDICTIONS,METRICS
+from evaluation.metrics import evaluate_classification
+from utils.utils import list_of_strings
+import os.path
+from sklearn.metrics import confusion_matrix
+from datetime import datetime
 
-def main(model_name, provider, input_file, output_file, prompt, batch_size, delay, temperature):
+
+def main(model_name, provider, input_file, prompt, batch_size, delay, temperature,metrics_param, output_file_eval, output_file_pred):
     
     # Process dataframes
     data = load_data(input_file)
 
     # Parse data
     idees = data[COL_IDEES].tolist()     # Idees
-    exposesommaire = data[COL_NOM_AMENDEMENT].tolist()     # Idees
+    exposesommaire = data[COL_EXPOSE_SOMMAIRE].tolist()     # Idees
     description = data[COL_DESCRIPTION].tolist()     # Description
 
     # Select a model provider
@@ -32,7 +41,6 @@ def main(model_name, provider, input_file, output_file, prompt, batch_size, dela
 
     # Classification des exposés sommaire en fonction de l'idée
     if batch_size > 0:
-
         # WITH BATCH
         start = time.time()
         predictions = model.classify_batches(data, batch_size, prompt_json["template"],delay,temperature=temperature)
@@ -42,31 +50,17 @@ def main(model_name, provider, input_file, output_file, prompt, batch_size, dela
     # NO BATCH
     else:
         start = time.time()
-        # MISTRAL
-        if provider == "mistral":
-            predictions = [
-                model.classify(
-                    prompt_json["template"].format(
-                        EXPOSE_SOMMAIRE=id,
-                        IDEE=expo,
-                        DESCRIPTION=descr
-                    ),
-                    temperature=temperature) for id,expo,descr in zip(idees,exposesommaire,description)
-                ]
-        # OPENAI
-        elif provider == "openai":
-            predictions = [
-                model.classify(
-                    exposes_sommaires = [expo],
-                    instruct_system = prompt_json["template"].format(
-                        IDEE=id,
-                        DESCRIPTION=descr
-                    ),
-                    temperature=temperature) for id,expo,descr in zip(idees,exposesommaire,description)
-                ]
-        
-
+        predictions = [
+            model.classify(
+                prompt_json["template"].format(
+                    IDEE=id,
+                    DESCRIPTION=descr,
+                    EXPOSE_SOMMAIRE=expo
+                ),
+                temperature=temperature) for id,expo,descr in zip(idees,exposesommaire,description)
+            ]
         end = time.time()
+        EXEC_TIME = end - start
         print(f"Total execution time: {end - start:.5f} seconds")
 
     
@@ -74,11 +68,55 @@ def main(model_name, provider, input_file, output_file, prompt, batch_size, dela
     data['prediction'] = predictions
     data['llm_provider'] = provider
     data['model'] = model_name
-    data['prompt'] = [prompt_json["template"].format(EXPOSE_SOMMAIRE=id,IDEE=expo,DESCRIPTION=descr) for id,expo,descr in zip(idees,exposesommaire,description)]
+    data['prompt_content'] = [prompt_json["template"].format(
+                    IDEE=id,
+                    DESCRIPTION=descr,
+                    EXPOSE_SOMMAIRE=expo
+                ) for id,expo,descr in zip(idees,exposesommaire,description)]
+    data['prompt_name'] = prompt
 
     # Save to prediction file
-    data.to_csv(DATA_DIR / output_file, index=False)
-    print(f"Predictions saved to {output_file}")
+    data.to_csv(DATA_DIR / output_file_pred, index=False)
+    print(f"Predictions saved to {output_file_pred}")
+
+    # Evaluation
+    y_true = data[COL_LABEL].str.lower()
+    y_pred = data[COL_PREDICTIONS].str.lower()
+    y_true = [str(x) for x in y_true]
+    y_pred = [str(x) for x in y_pred]
+
+    # Compute the desired metrics 
+    metrics = evaluate_classification(y_true, y_pred)
+
+    metrics["confusion_matrix"] = [confusion_matrix(y_pred=y_pred,y_true=y_true,labels=["oui","non"])]
+    metrics["prompt"] = [data['prompt_name'].values[0]]
+    metrics["model"] = [model_name]
+    metrics["temperature"] = [temperature]
+    metrics["y_true"] = [y_true]
+    metrics["y_pred"] = [y_pred]
+    metrics["execution_time"] = [EXEC_TIME]
+    metrics["time_eval"] = [datetime.now()]
+
+    # Plot
+    print("Confusion matrix:")
+    print(confusion_matrix(y_pred=y_pred,y_true=y_true,labels=["oui","non"]))
+    for metric in metrics_param:
+        print(f"{metric}: {metrics[metric][0]:.4f}")
+
+
+    # If the file already exists
+    if os.path.isfile(output_file_eval):
+        df_res = pd.read_csv(
+            output_file_eval)
+        for metric, value in metrics.items():
+            metrics[metric] = value[0]
+        df_res.loc[-1] = metrics
+        df_res.to_csv(output_file_eval,index=0)
+    # Else create it
+    else:
+        pd.DataFrame.from_dict(metrics).to_csv(
+            output_file_eval,
+            index=0,)
 
 if __name__ == "__main__":
     """
@@ -92,10 +130,23 @@ if __name__ == "__main__":
     parser.add_argument('--batch_size', type=str, default=0, help='Select a batch size ')
     parser.add_argument('--delay', type=str, default=0, help='Delay to wait between batches')
     parser.add_argument('--input_file', type=str, required=True, help='Path to input CSV file. Columns = [IDEES,DESCRIPTION,NOM_AMENDEMENT,LABEL]')
-    parser.add_argument('--output_file', type=str, required=True, help='Path to save predictions.')
+    parser.add_argument('--output_file_pred', type=str, required=True, help='Path to save predictions.')
+    parser.add_argument('--output_file_eval', type=str, default="../data/results/eval/evaluations.csv", help='Output file')
     parser.add_argument('--temperature', type=str, default=0, help='Temperature of model.')
+    parser.add_argument('--metrics_param', type=list_of_strings, default=METRICS, help='List of metrics to plot. Default ["accuracy", "precision", "recall","f1_score"]')
+
 
     args = parser.parse_args()
 
-    main(args.model_name, args.provider, args.input_file, args.output_file, args.prompt, int(args.batch_size), int(args.delay), int(args.temperature))
+    main(
+        model_name=args.model_name, 
+        provider = args.provider,
+        input_file = args.input_file,
+        prompt = args.prompt, 
+        batch_size = int(args.batch_size),
+        delay = int(args.delay),
+        temperature = int(args.temperature),
+        metrics_param = args.metrics_param,
+        output_file_eval = args.output_file_eval,
+        output_file_pred = args.output_file_pred,)
 

@@ -5,7 +5,6 @@ from sklearn.metrics import f1_score
 
 
 def evaluate_classification(y_true, y_pred):
-    
     return {
         "accuracy": [accuracy_score(y_true, y_pred)],
         "precision": [precision_score(y_true, y_pred, average='weighted')],
