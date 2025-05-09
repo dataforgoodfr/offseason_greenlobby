@@ -7,7 +7,7 @@ from modeling.open_ai import OpenAIModel
 from modeling.mistral import MistralModel
 from utils.data_loader import load_data
 from utils.data_loader import load_prompt
-from config import DATA_DIR,COL_DESCRIPTION,COL_IDEES,COL_LABEL,COL_NOM_AMENDEMENT
+from config import DATA_DIR,COL_DESCRIPTION,COL_IDEES,COL_NOM_AMENDEMENT
 
 def main(model_name, provider, input_file, output_file, prompt, batch_size, delay, temperature):
     
@@ -18,7 +18,6 @@ def main(model_name, provider, input_file, output_file, prompt, batch_size, dela
     idees = data[COL_IDEES].tolist()     # Idees
     exposesommaire = data[COL_NOM_AMENDEMENT].tolist()     # Idees
     description = data[COL_DESCRIPTION].tolist()     # Description
-    labels = data[COL_LABEL].tolist()     # Label
 
     # Select a model provider
     if provider == 'openai':
@@ -33,6 +32,7 @@ def main(model_name, provider, input_file, output_file, prompt, batch_size, dela
 
     # Classification des exposés sommaire en fonction de l'idée
     if batch_size > 0:
+
         # WITH BATCH
         start = time.time()
         predictions = model.classify_batches(data, batch_size, prompt_json["template"],delay,temperature=temperature)
@@ -72,6 +72,8 @@ def main(model_name, provider, input_file, output_file, prompt, batch_size, dela
     
     # Save prompt and predictions
     data['prediction'] = predictions
+    data['llm_provider'] = provider
+    data['model'] = model_name
     data['prompt'] = [prompt_json["template"].format(EXPOSE_SOMMAIRE=id,IDEE=expo,DESCRIPTION=descr) for id,expo,descr in zip(idees,exposesommaire,description)]
 
     # Save to prediction file

@@ -1,5 +1,5 @@
 import os
-from config import COL_IDEES,COL_DESCRIPTION
+from config import COL_IDEES,COL_DESCRIPTION,COL_EXPOSE_SOMMAIRE
 import pandas as pd
 import openai
 from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
@@ -35,7 +35,7 @@ class OpenAIModel:
                     model=self.model_name,
                     n = len(messages)-1,
                     temperature= temperature,
-                    messages = messages  ### RAJOUTER TEMPERATURE
+                    messages = messages 
                 )
                 
                 return [choice.message.content.strip().lower() for choice in response.choices]
@@ -45,14 +45,13 @@ class OpenAIModel:
 
 
     def classify_batches(self, df: pd.DataFrame, batch_size: int, prompt_template: str, delay: float, temperature) -> list:
-
+        content_ret = []
         for start in range(0, len(df), batch_size):
             end = start + batch_size
             batch = df.iloc[start:end]
-            
             try:
                 content = self.classify(
-                    exposes_sommaires = [row["ExposeSommaire"] for _, row in batch.iterrows()],
+                    exposes_sommaires = [row[COL_EXPOSE_SOMMAIRE] for _, row in batch.iterrows()],
                     instruct_system = prompt_template.format(
                         IDEE=batch[COL_IDEES].values[0],
                         DESCRIPTION=batch[COL_DESCRIPTION].values[0]
@@ -61,15 +60,15 @@ class OpenAIModel:
 
                 if batch.shape[0] == len(content):
                     print(f"✅ {len(content)} results found out of {batch.shape[0]}")
-                    return content
+                    content_ret.extend(content)
                 else:
                     print(f"❌ {len(content)} results found out of {batch.shape[0]}")
-                    print(f"❌ Error in this batch")
-                    return ["échec API"] * df.shape[0]
+                    content_ret.extend(["échec API"] * df.shape[0])
             
             except Exception as e:
-                print(f"Erreur API tentative {e}")
+                print(f"Erreur API: {e}")
+                return content_ret.extend(["échec API"] * df.shape[0])
 
-
-        return ["échec API"] * df.shape[0]
+        print(f"✅ {len(content_ret)} results found out of {len(df)}")
+        return content_ret
 

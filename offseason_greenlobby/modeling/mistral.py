@@ -3,7 +3,7 @@ import time
 import pandas as pd
 from mistralai import Mistral
 from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
-from config import COL_IDEES,COL_DESCRIPTION
+from config import COL_IDEES,COL_DESCRIPTION,COL_EXPOSE_SOMMAIRE
 
 
 class MistralModel:
@@ -32,26 +32,37 @@ class MistralModel:
             print(f"❌ API Error {e}")
         return ["échec API"]
 
+
+
+
     def classify_batches(self, df: pd.DataFrame, batch_size: int, prompt_template: str, delay: float, temperature) -> list:
-        responses = []
+        content_ret = []
         for start in range(0, len(df), batch_size):
             end = start + batch_size
             batch = df.iloc[start:end]
-
             for _, row in batch.iterrows():
                 try:
                     prompt = prompt_template.format(
-                        EXPOSE_SOMMAIRE=row["ExposeSommaire"],
+                        EXPOSE_SOMMAIRE=row[COL_EXPOSE_SOMMAIRE],
                         IDEE=row[COL_IDEES],
                         DESCRIPTION=row[COL_DESCRIPTION]
                     )
                     response = self.classify(prompt,temperature)
-                    responses.append(response)
+
+                    if batch.shape[0] == len(response):
+                        print(f"✅ {len(response)} results found out of {batch.shape[0]}")
+                        print("Response:",response)
+
+                        content_ret.extend(response)
+                    else:
+                        print(f"❌ {len(response)} results found out of {batch.shape[0]}")
+                        print("Response:",response)
+
+                        content_ret.extend(["échec API"] * df.shape[0])
                 except Exception as e:
-                    print(f"❌ Error processing row {_}: {e}")
-                    responses.append("échec API")
-                time.sleep(delay)
+                    print(f"Erreur API: {e}")
+                    return content_ret.extend(["échec API"] * df.shape[0])
 
-                # Your function or code block here
+        print(f"✅ {len(content_ret)} results found out of {len(df)}")
+        return content_ret
 
-        return responses
