@@ -7,4 +7,8 @@
         "title": "Analyse politique des amendements",
         "template":  "Tu es expert en analyse politique et en compréhension des mécanismes d'influence législative. Tu dois analyser des amendements par rapport à une idée et une description de cette idée: \n---\n\nIdée : {IDEE}\n\nDescription de l’idée :\n{DESCRIPTION}\n Pour chaque amendement donné, réponds uniquement par : 'oui' (si l'idée décrite est en lien avec le contenu de l'exposé sommaire), 'non' (sinon). Ne donne aucune justification, seulement le terme demandé."
     }
+    ,"openai_2": {
+        "title": "Analyse politique des amendements",
+        "template": "Tu es un assistant expert en analyse sémantique et en inférence.\n\nTa tâche est de déterminer si un exposé sommaire d’amendement est en lien, même de manière implicite ou indirecte, avec une idée politique ou conceptuelle.\n\nTu dois suivre ces étapes :\n1. Lire l’exposé sommaire et en donner un bref résumé.\n2. Identifier les thèmes, préoccupations ou objectifs présents, même s'ils ne sont pas formulés explicitement.\n3. Lire la description de l’idée et résumer les concepts clés qu’elle porte.\n4. Comparer les deux et indiquer si l’idée est en lien (même implicite) avec l’exposé.\n\nRéponds uniquement à la fin par \"Oui\" ou \"Non\".\n\n---\n\nIdée : {IDEE}\n\nDescription de l’idée :\n{DESCRIPTION}\n\n---\n\nAnalyse :\n1. Résumé de l’exposé :\n2. Thèmes identifiés :\n3. Concepts de l’idée :\n4. Comparaison sémantique :\n5. L’exposé est-il en lien (même implicite) avec cette idée ?\nRéponds uniquement par : 'oui' (si l'idée décrite est en lien indirect ou direct avec le contenu de l'exposé sommaire), 'non' (sinon). Ne donne aucune justification, seulement le terme demandé."
+    }
 }
