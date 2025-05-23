@@ -34,7 +34,17 @@ def load_data(file_path: str):
 
 def load_prompt(prompt_name: str):
     """
+    LOAD PROMPT FROM A JSON FILE
+    """
+    with open(DATA_DIR / "prompts/prompts.json", "r", encoding="utf-8") as f:
+        prompt_data = json.load(f)
+
+        return prompt_data[prompt_name]
     
+
+def load_prompt_py(prompt_name: str):
+    """
+    LOAD PROMPT FROM A PYTHON FILE
     """
     with open(DATA_DIR / "prompts/prompts.json", "r", encoding="utf-8") as f:
         prompt_data = json.load(f)

@@ -17,6 +17,12 @@ import os.path
 from sklearn.metrics import confusion_matrix
 from datetime import datetime
 
+import sys
+sys.path.append("/Users/basileroth/Desktop/Code/offseason_greenlobby")
+import importlib
+
+
+
 
 def main(model_name, provider, input_file, prompt, batch_size, delay, temperature,metrics_param, output_file_eval, output_file_pred):
     
@@ -37,7 +43,15 @@ def main(model_name, provider, input_file, prompt, batch_size, delay, temperatur
         raise ValueError("Unsupported provider (you need to pick either openai or mistral)")
 
     # Build prompt
-    prompt_json = load_prompt(prompt)
+    # prompt_json = load_prompt(prompt)
+
+    module_name = "data.prompts.prompts_py"       # Name of the module as a string
+    variable_name = prompt # Name of the variable as a string
+    module = importlib.import_module(module_name)
+    value = getattr(module, variable_name)
+
+
+    prompt_json = value
 
     # Classification des exposés sommaire en fonction de l'idée
     if batch_size > 0:
@@ -52,7 +66,7 @@ def main(model_name, provider, input_file, prompt, batch_size, delay, temperatur
         start = time.time()
         predictions = [
             model.classify(
-                prompt_json["template"].format(
+                prompt_json.format(
                     IDEE=id,
                     DESCRIPTION=descr,
                     EXPOSE_SOMMAIRE=expo
@@ -68,7 +82,7 @@ def main(model_name, provider, input_file, prompt, batch_size, delay, temperatur
     data['prediction'] = predictions
     data['llm_provider'] = provider
     data['model'] = model_name
-    data['prompt_content'] = [prompt_json["template"].format(
+    data['prompt_content'] = [prompt_json.format(
                     IDEE=id,
                     DESCRIPTION=descr,
                     EXPOSE_SOMMAIRE=expo
@@ -145,7 +159,7 @@ if __name__ == "__main__":
         prompt = args.prompt, 
         batch_size = int(args.batch_size),
         delay = int(args.delay),
-        temperature = int(args.temperature),
+        temperature = float(args.temperature),
         metrics_param = args.metrics_param,
         output_file_eval = args.output_file_eval,
         output_file_pred = args.output_file_pred,)
