@@ -43,14 +43,12 @@ def main(model_name, provider, input_file, prompt, batch_size, delay, temperatur
         raise ValueError("Unsupported provider (you need to pick either openai or mistral)")
 
     # Build prompt
-    # prompt_json = load_prompt(prompt)
+    # prompt_json = load_prompt(prompt)         # OLD
 
     module_name = "data.prompts.prompts_py"       # Name of the module as a string
     variable_name = prompt # Name of the variable as a string
     module = importlib.import_module(module_name)
     value = getattr(module, variable_name)
-
-
     prompt_json = value
 
     # Classification des exposés sommaire en fonction de l'idée
@@ -140,7 +138,7 @@ if __name__ == "__main__":
 
     parser.add_argument('--model_name', type=str, required=True, help='Model name to use.')
     parser.add_argument('--provider', type=str, choices=['openai', 'mistral'], required=True, help='LLM provider.')
-    parser.add_argument('--prompt', type=str, required=True, help='Select a prompt in the Json file containing the prompts [data/prompts/prompts.json]')
+    parser.add_argument('--prompt', type=str, required=True, help='Select a prompt in the Json file containing the prompts [data/prompts/prompts_py.py]')
     parser.add_argument('--batch_size', type=str, default=0, help='Select a batch size ')
     parser.add_argument('--delay', type=str, default=0, help='Delay to wait between batches')
     parser.add_argument('--input_file', type=str, required=True, help='Path to input CSV file. Columns = [IDEES,DESCRIPTION,NOM_AMENDEMENT,LABEL]')
