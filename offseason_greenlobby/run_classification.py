@@ -5,6 +5,7 @@ import time
 
 from modeling.open_ai import OpenAIModel
 from modeling.mistral import MistralModel
+from modeling.embedding import Embedding
 from utils.data_loader import load_data
 from utils.data_loader import load_prompt
 from config import DATA_DIR,COL_DESCRIPTION,COL_IDEES,COL_EXPOSE_SOMMAIRE
@@ -39,6 +40,8 @@ def main(model_name, provider, input_file, prompt, batch_size, delay, temperatur
         model = OpenAIModel(model_name)
     elif provider == 'mistral':
         model = MistralModel(model_name)
+    elif provider == "embedding" :
+        model = Embedding(model_name)
     else:
         raise ValueError("Unsupported provider (you need to pick either openai or mistral)")
 
@@ -62,15 +65,23 @@ def main(model_name, provider, input_file, prompt, batch_size, delay, temperatur
     # NO BATCH
     else:
         start = time.time()
-        predictions = [
-            model.classify(
-                prompt_json.format(
-                    IDEE=id,
-                    DESCRIPTION=descr,
-                    EXPOSE_SOMMAIRE=expo
-                ),
-                temperature=temperature) for id,expo,descr in zip(idees,exposesommaire,description)
-            ]
+        if provider == "embedding" :
+            model.prompt_encode(description[0])
+
+            predictions = [
+                model.classify(expo) for id,expo,descr in zip(idees,exposesommaire,description)
+                ]
+            
+        else:
+            predictions = [
+                model.classify(
+                    prompt_json.format(
+                        IDEE=id,
+                        DESCRIPTION=descr,
+                        EXPOSE_SOMMAIRE=expo
+                    ),
+                    temperature=temperature) for id,expo,descr in zip(idees,exposesommaire,description)
+                ]
         end = time.time()
         EXEC_TIME = end - start
         print(f"Total execution time: {end - start:.5f} seconds")
@@ -137,7 +148,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run text classification using LLMs.")
 
     parser.add_argument('--model_name', type=str, required=True, help='Model name to use.')
-    parser.add_argument('--provider', type=str, choices=['openai', 'mistral'], required=True, help='LLM provider.')
+    parser.add_argument('--provider', type=str, choices=['openai', 'mistral','embedding'], required=True, help='LLM provider.')
     parser.add_argument('--prompt', type=str, required=True, help='Select a prompt in the Json file containing the prompts [data/prompts/prompts_py.py]')
     parser.add_argument('--batch_size', type=str, default=0, help='Select a batch size ')
     parser.add_argument('--delay', type=str, default=0, help='Delay to wait between batches')
@@ -161,4 +172,3 @@ if __name__ == "__main__":
         metrics_param = args.metrics_param,
         output_file_eval = args.output_file_eval,
         output_file_pred = args.output_file_pred,)
-
