@@ -1,0 +1,385 @@
+,IDEES,DESCRIPTION,NOM_AMENDEMENT,EXPOSE_SOMMAIRE,LABEL,prediction,llm_provider,model,prompt_content,prompt_name
+1,simplification des démarches administratives,"réduire les réglementations environnementales et sanitaires. Simplifier les démarches administratives, démarches bureaucratiques chronophages qui sont des freins qui entravent le quotidien des agriculteurs",AMANR5L16PO419610B2436P0D1N001540,"Cet article a pour but de réhausser les seuils de la nomenclature IOTA pour la protection et la consolidation des berges par des techniques autres que végétales vivantes. 
+Un des objectifs du gouvernement, retranscrit dans le pacte en faveur de la haie, est la simplification des règlementations autour des haies. 
+De plus, le gouvernement, dans ce même document, énonce qu’”une vision dynamique de l’évolution du linéaire de haie est nécessaire”. 
+Ainsi, le rehaussement des seuils vise à répondre aux exigences du Pacte en faveur de la haie.",non,oui,mistral,mistral-medium-latest,"
+    # Instruction :
+
+    Vous êtes un assistant chargé d'analyser la présence d'une idée dans un texte. 
+    
+    Déterminez si l'idée décrite est présente dans le texte, que ce soit de manière explicite ou implicite.
+
+
+    <<<
+    Idée : simplification des démarches administratives
+    >>>
+
+    <<<
+    Description de l'idée : réduire les réglementations environnementales et sanitaires. Simplifier les démarches administratives, démarches bureaucratiques chronophages qui sont des freins qui entravent le quotidien des agriculteurs
+    >>>
+    
+    <<<
+    Texte : Cet article a pour but de réhausser les seuils de la nomenclature IOTA pour la protection et la consolidation des berges par des techniques autres que végétales vivantes. 
+Un des objectifs du gouvernement, retranscrit dans le pacte en faveur de la haie, est la simplification des règlementations autour des haies. 
+De plus, le gouvernement, dans ce même document, énonce qu’”une vision dynamique de l’évolution du linéaire de haie est nécessaire”. 
+Ainsi, le rehaussement des seuils vise à répondre aux exigences du Pacte en faveur de la haie.
+    >>>
+
+    Répondez uniquement par :
+    Oui
+    Non
+
+    Aucune autre information ou explication n'est requise.""
+",prompt_test_ch
+3,simplification des démarches administratives,"réduire les réglementations environnementales et sanitaires. Simplifier les démarches administratives, démarches bureaucratiques chronophages qui sont des freins qui entravent le quotidien des agriculteurs",AMANR5L16PO419610B2436P0D1N001182,"L’article 9 du présent projet de loi établit les principes, objectifs et le fonctionnement du diagnostic modulaire qui sera mis en œuvre progressivement au plus tard en 2026.
+Or, le diagnostic modulaire, tel qu’il a été pensé lors des concertations portant sur le pacte et la loi et d’orientation et d’avenir agricoles (PLOAA) et consacré par le pacte d’orientation pour le renouvellement des générations en agriculture, diffère dans sa rédaction et dans son esprit avec les dispositions de l’article 9 du présent projet de loi. En effet, la mise en place d’un diagnostic modulaire doit viser concrètement à délivrer une analyse à 360° permettant de projeter une exploitation vers l’avenir par sa capacité à résister au changement climatique et à être reprise par un jeune lors de la cession.
+Cet amendement vise ainsi à reformuler le contenu et l’architecture globale du diagnostic modulaire et à supprimer le module d’évaluation de la qualité et de la santé des sols dans le corpus du diagnostic modulaire.
+Ainsi, le contenu de diagnostic modulaire comportera notamment un module dit de stress-test climatique, un module d’évaluation économique de l’exploitation et un module consacré à l’aspect social du projet. Au-delà, il serait souhaitable que l’État travaille au déploiement d’autres modules comme par exemple une analyse de la performance de l’exploitation, une analyse des productions et leurs débouchés, des capacités de diversification de l’exploitation, mais aussi de ses capacités de restructuration, ainsi que de son environnement fiscal et social
+En revanche, il ne paraît pas opportun de créer un diagnostic de la qualité et de la santé des sols notamment en raison de son impact potentiel sur le prix du foncier et de la création de contraintes nouvelles pour les exploitants. Le module dit de stress-test climatique pourrait toutefois inclure une analyse des sols en présence et de leur capacité de production à l’avenir.
+Cet amendement est proposé en concertation avec la FNSEA et Jeunes agriculteurs.",oui,non,mistral,mistral-medium-latest,"
+    # Instruction :
+
+    Vous êtes un assistant chargé d'analyser la présence d'une idée dans un texte. 
+    
+    Déterminez si l'idée décrite est présente dans le texte, que ce soit de manière explicite ou implicite.
+
+
+    <<<
+    Idée : simplification des démarches administratives
+    >>>
+
+    <<<
+    Description de l'idée : réduire les réglementations environnementales et sanitaires. Simplifier les démarches administratives, démarches bureaucratiques chronophages qui sont des freins qui entravent le quotidien des agriculteurs
+    >>>
+    
+    <<<
+    Texte : L’article 9 du présent projet de loi établit les principes, objectifs et le fonctionnement du diagnostic modulaire qui sera mis en œuvre progressivement au plus tard en 2026.
+Or, le diagnostic modulaire, tel qu’il a été pensé lors des concertations portant sur le pacte et la loi et d’orientation et d’avenir agricoles (PLOAA) et consacré par le pacte d’orientation pour le renouvellement des générations en agriculture, diffère dans sa rédaction et dans son esprit avec les dispositions de l’article 9 du présent projet de loi. En effet, la mise en place d’un diagnostic modulaire doit viser concrètement à délivrer une analyse à 360° permettant de projeter une exploitation vers l’avenir par sa capacité à résister au changement climatique et à être reprise par un jeune lors de la cession.
+Cet amendement vise ainsi à reformuler le contenu et l’architecture globale du diagnostic modulaire et à supprimer le module d’évaluation de la qualité et de la santé des sols dans le corpus du diagnostic modulaire.
+Ainsi, le contenu de diagnostic modulaire comportera notamment un module dit de stress-test climatique, un module d’évaluation économique de l’exploitation et un module consacré à l’aspect social du projet. Au-delà, il serait souhaitable que l’État travaille au déploiement d’autres modules comme par exemple une analyse de la performance de l’exploitation, une analyse des productions et leurs débouchés, des capacités de diversification de l’exploitation, mais aussi de ses capacités de restructuration, ainsi que de son environnement fiscal et social
+En revanche, il ne paraît pas opportun de créer un diagnostic de la qualité et de la santé des sols notamment en raison de son impact potentiel sur le prix du foncier et de la création de contraintes nouvelles pour les exploitants. Le module dit de stress-test climatique pourrait toutefois inclure une analyse des sols en présence et de leur capacité de production à l’avenir.
+Cet amendement est proposé en concertation avec la FNSEA et Jeunes agriculteurs.
+    >>>
+
+    Répondez uniquement par :
+    Oui
+    Non
+
+    Aucune autre information ou explication n'est requise.""
+",prompt_test_ch
+23,simplification des démarches administratives,"réduire les réglementations environnementales et sanitaires. Simplifier les démarches administratives, démarches bureaucratiques chronophages qui sont des freins qui entravent le quotidien des agriculteurs",AMANR5L16PO419610B2436P0D1N002694,"Cet amendement a pour objectif d’intégrer d’autres règlementations pouvant s’appliquer à une haie. Le but de ce mécanisme étant de simplifier les démarches pour les pétitionnaires, la démarche d’autorisation se doit d’être exhaustive pour ne pas avoir de procédure administrative en parallèle. C’est pourquoi intégrer les deux autorisations concernant les monuments historiques, les sites patrimoniaux et la déclaration concernant les sites inscrits permet de répondre à l’objectif de cette nouvelle section relative à la protection des haies.",non,oui,mistral,mistral-medium-latest,"
+    # Instruction :
+
+    Vous êtes un assistant chargé d'analyser la présence d'une idée dans un texte. 
+    
+    Déterminez si l'idée décrite est présente dans le texte, que ce soit de manière explicite ou implicite.
+
+
+    <<<
+    Idée : simplification des démarches administratives
+    >>>
+
+    <<<
+    Description de l'idée : réduire les réglementations environnementales et sanitaires. Simplifier les démarches administratives, démarches bureaucratiques chronophages qui sont des freins qui entravent le quotidien des agriculteurs
+    >>>
+    
+    <<<
+    Texte : Cet amendement a pour objectif d’intégrer d’autres règlementations pouvant s’appliquer à une haie. Le but de ce mécanisme étant de simplifier les démarches pour les pétitionnaires, la démarche d’autorisation se doit d’être exhaustive pour ne pas avoir de procédure administrative en parallèle. C’est pourquoi intégrer les deux autorisations concernant les monuments historiques, les sites patrimoniaux et la déclaration concernant les sites inscrits permet de répondre à l’objectif de cette nouvelle section relative à la protection des haies.
+    >>>
+
+    Répondez uniquement par :
+    Oui
+    Non
+
+    Aucune autre information ou explication n'est requise.""
+",prompt_test_ch
+38,simplification des démarches administratives,"réduire les réglementations environnementales et sanitaires. Simplifier les démarches administratives, démarches bureaucratiques chronophages qui sont des freins qui entravent le quotidien des agriculteurs","L’exercice agricole est soumis à un trop grand nombre de normes, parfois contradictoires, ce qui peut entraîner des erreurs involontaires de la part des agriculteurs. Il est donc nécessaire de leur accorder un droit à l’erreur, afin qu’ils puissent corriger leurs fautes sans être immédiatement sanctionnés.""Attention : l'expression 'droit à l'erreur' n'est pas toujours explicitement utilisée. On évoque parfois plutôt ""la nécessité d'une absence de sanctions en cas de règles contradictoires"" ou ""l’enchevêtrement des normes qui entraîne des incompréhensions"". Donc important de bien décrire l'idée dans le prompt je pense :))","Les alinéas 1 à 6 de l’article 9 (à supprimer) visent à ajouter un nouveau dispositif de diagnostic pour les transmissions d’exploitations agricoles qui pourrait devenir contraignant d’ici 2025.
+Si la loi est adoptée, obligation sera faite pour les agriculteurs de diagnostiquer :
+la résilience de l’exploitation face aux conséquences du changement climatique, telles qu’elles sont estimées par la trajectoire de réchauffement de référence pour l'adaptation au changement climatique 
+la capacité de l’exploitation à contribuer à l’atténuation de celui-ci, notamment par la mise en place de pratiques agroécologiques.
+L’analyse des performances économiques de l’exploitation.
+ 
+Cet amendement provient de la Coordination Rurale.",oui,non,mistral,mistral-medium-latest,"
+    # Instruction :
+
+    Vous êtes un assistant chargé d'analyser la présence d'une idée dans un texte. 
+    
+    Déterminez si l'idée décrite est présente dans le texte, que ce soit de manière explicite ou implicite.
+
+
+    <<<
+    Idée : simplification des démarches administratives
+    >>>
+
+    <<<
+    Description de l'idée : réduire les réglementations environnementales et sanitaires. Simplifier les démarches administratives, démarches bureaucratiques chronophages qui sont des freins qui entravent le quotidien des agriculteurs
+    >>>
+    
+    <<<
+    Texte : Les alinéas 1 à 6 de l’article 9 (à supprimer) visent à ajouter un nouveau dispositif de diagnostic pour les transmissions d’exploitations agricoles qui pourrait devenir contraignant d’ici 2025.
+Si la loi est adoptée, obligation sera faite pour les agriculteurs de diagnostiquer :
+la résilience de l’exploitation face aux conséquences du changement climatique, telles qu’elles sont estimées par la trajectoire de réchauffement de référence pour l'adaptation au changement climatique 
+la capacité de l’exploitation à contribuer à l’atténuation de celui-ci, notamment par la mise en place de pratiques agroécologiques.
+L’analyse des performances économiques de l’exploitation.
+ 
+Cet amendement provient de la Coordination Rurale.
+    >>>
+
+    Répondez uniquement par :
+    Oui
+    Non
+
+    Aucune autre information ou explication n'est requise.""
+",prompt_test_ch
+61,simplification des démarches administratives,"réduire les réglementations environnementales et sanitaires. Simplifier les démarches administratives, démarches bureaucratiques chronophages qui sont des freins qui entravent le quotidien des agriculteurs",AMANR5L16PO791932BTC2600P0D1N002709,"Amendement d'appel.
+La viticulture française joue un rôle majeur pour la préservation de la souveraineté alimentaire de la Nation. 
+Or, confrontée à un enchevêtrement de normes absurdes, aux défis du changement climatique, et à une baisse de la consommation de vin, le secteur traverse actuellement une crise sans précédent.
+Cette crise est en grande partie due à la concurrence déloyale, particulièrement celle des vins étrangers, notamment ceux provenant d'Espagne.
+En effet, les viticulteurs français se retrouvent en concurrence avec des vins produits en grande 
+majorité à l’étranger et moins onéreux.
+Ainsi, cet amendement invite le Gouvernement à apporter une réponse concrète aux revendications des viticulteurs français, afin de leur permettre de vivre décemment de leur travail et de faire face à la concurrence déloyale imposée par l'Union européenne.",oui,non,mistral,mistral-medium-latest,"
+    # Instruction :
+
+    Vous êtes un assistant chargé d'analyser la présence d'une idée dans un texte. 
+    
+    Déterminez si l'idée décrite est présente dans le texte, que ce soit de manière explicite ou implicite.
+
+
+    <<<
+    Idée : simplification des démarches administratives
+    >>>
+
+    <<<
+    Description de l'idée : réduire les réglementations environnementales et sanitaires. Simplifier les démarches administratives, démarches bureaucratiques chronophages qui sont des freins qui entravent le quotidien des agriculteurs
+    >>>
+    
+    <<<
+    Texte : Amendement d'appel.
+La viticulture française joue un rôle majeur pour la préservation de la souveraineté alimentaire de la Nation. 
+Or, confrontée à un enchevêtrement de normes absurdes, aux défis du changement climatique, et à une baisse de la consommation de vin, le secteur traverse actuellement une crise sans précédent.
+Cette crise est en grande partie due à la concurrence déloyale, particulièrement celle des vins étrangers, notamment ceux provenant d'Espagne.
+En effet, les viticulteurs français se retrouvent en concurrence avec des vins produits en grande 
+majorité à l’étranger et moins onéreux.
+Ainsi, cet amendement invite le Gouvernement à apporter une réponse concrète aux revendications des viticulteurs français, afin de leur permettre de vivre décemment de leur travail et de faire face à la concurrence déloyale imposée par l'Union européenne.
+    >>>
+
+    Répondez uniquement par :
+    Oui
+    Non
+
+    Aucune autre information ou explication n'est requise.""
+",prompt_test_ch
+62,simplification des démarches administratives,"réduire les réglementations environnementales et sanitaires. Simplifier les démarches administratives, démarches bureaucratiques chronophages qui sont des freins qui entravent le quotidien des agriculteurs",AMANR5L16PO791932BTC2600P0D1N004504,"A de multiples reprises, pour aborder la souveraineté, mais aussi la promotion et la formations aux métiers de l’agriculture, pour traiter de transmission et installation, le texte fait référence à la prise en compte des transitions agroécologiques et climatiques. L’entreprise agricole ne peut être vue qu’au regard de ces deux dimensions.
+L’économie, la gestion, les marchés, les techniques de production doivent être considérées comme essentielles et, de ce fait, mentionnées comme des préalables à la réussite des projets. 
+ 
+L'amendement est proposé par la FNSEA.",oui,non,mistral,mistral-medium-latest,"
+    # Instruction :
+
+    Vous êtes un assistant chargé d'analyser la présence d'une idée dans un texte. 
+    
+    Déterminez si l'idée décrite est présente dans le texte, que ce soit de manière explicite ou implicite.
+
+
+    <<<
+    Idée : simplification des démarches administratives
+    >>>
+
+    <<<
+    Description de l'idée : réduire les réglementations environnementales et sanitaires. Simplifier les démarches administratives, démarches bureaucratiques chronophages qui sont des freins qui entravent le quotidien des agriculteurs
+    >>>
+    
+    <<<
+    Texte : A de multiples reprises, pour aborder la souveraineté, mais aussi la promotion et la formations aux métiers de l’agriculture, pour traiter de transmission et installation, le texte fait référence à la prise en compte des transitions agroécologiques et climatiques. L’entreprise agricole ne peut être vue qu’au regard de ces deux dimensions.
+L’économie, la gestion, les marchés, les techniques de production doivent être considérées comme essentielles et, de ce fait, mentionnées comme des préalables à la réussite des projets. 
+ 
+L'amendement est proposé par la FNSEA.
+    >>>
+
+    Répondez uniquement par :
+    Oui
+    Non
+
+    Aucune autre information ou explication n'est requise.""
+",prompt_test_ch
+80,Distorsions de concurrence,Les normes environnementales pénalisent les agriculteurs français en les exposant à la concurrence déloyale d’acteurs étrangers soumis à des standards moins rigoureux et une charge administrative moindre,AMANR5L16PO419610B2436P0D1N002046.json,"Selon l’Institut national de recherche pour l’agriculture, l’alimentation et l’environnement (INRAe), 88 hectares de terres agricoles disparaissent chaque jour en France sous la pression de l’artificialisation des terres et de l’abandon de l’usage agricole au profit de terres boisées et naturelles. En parallèle, se dessine une tendance à l'augmentation de la taille des exploitations.Cette double dynamique complique l'installation de nouveaux agriculteurs, qui doivent composer avec des terres plus rares et plus chères. En 2020, elles exploitent en moyenne 69 hectares (ha), soit 14 ha de plus qu'en 2010 et 27 de plus qu'en 2000 (chiffres du ministère de l'agriculture). Alors qu'il ne pourra y avoir de renouvellement des générations sans régulation du foncier agricole - qui est le support de l’installation - ce projet de loi ne comprend qu'une seule mesure sur la question: la création de groupements fonciers agricoles d’investissement (GFAI). Cet article prévoit d’attirer des capitaux privés pour financer l’effort d’investissement nécessaire lors de l’installation en agriculture, mais surtout comme le mentionne l'alinéa 2 : ""dans l’intérêt de ces derniers"". Les auteurs de cet amendement souhaitent supprimer cet article qui risque d'aboutir à une financiarisation de l’agriculture. Ces nouveaux dispositifs risquent d'être de nouveaux moyens de contournement de la loi Sempastous. Nous redoutons par ailleurs un risque de renchérissement du prix du foncier. La rentabilité agricole étant limitée, les investisseurs risquent de se rémunérer via l’augmentation du prix du foncier.Par ailleurs, l'impact fiscal de la mesure est insuffisamment évalué: les collectivités locales risquent de voir disparaitre les droits de mutation. Il y aura également 25% d’abattement sur le revenu imposable, ce qui pourrait créer une distorsion de concurrence entre le GFAI et l’agriculteur.Quand au fermier, il ne pourra plus bénéficier de son droit de préemption.",oui,non,mistral,mistral-medium-latest,"
+    # Instruction :
+
+    Vous êtes un assistant chargé d'analyser la présence d'une idée dans un texte. 
+    
+    Déterminez si l'idée décrite est présente dans le texte, que ce soit de manière explicite ou implicite.
+
+
+    <<<
+    Idée : Distorsions de concurrence
+    >>>
+
+    <<<
+    Description de l'idée : Les normes environnementales pénalisent les agriculteurs français en les exposant à la concurrence déloyale d’acteurs étrangers soumis à des standards moins rigoureux et une charge administrative moindre
+    >>>
+    
+    <<<
+    Texte : Selon l’Institut national de recherche pour l’agriculture, l’alimentation et l’environnement (INRAe), 88 hectares de terres agricoles disparaissent chaque jour en France sous la pression de l’artificialisation des terres et de l’abandon de l’usage agricole au profit de terres boisées et naturelles. En parallèle, se dessine une tendance à l'augmentation de la taille des exploitations.Cette double dynamique complique l'installation de nouveaux agriculteurs, qui doivent composer avec des terres plus rares et plus chères. En 2020, elles exploitent en moyenne 69 hectares (ha), soit 14 ha de plus qu'en 2010 et 27 de plus qu'en 2000 (chiffres du ministère de l'agriculture). Alors qu'il ne pourra y avoir de renouvellement des générations sans régulation du foncier agricole - qui est le support de l’installation - ce projet de loi ne comprend qu'une seule mesure sur la question: la création de groupements fonciers agricoles d’investissement (GFAI). Cet article prévoit d’attirer des capitaux privés pour financer l’effort d’investissement nécessaire lors de l’installation en agriculture, mais surtout comme le mentionne l'alinéa 2 : ""dans l’intérêt de ces derniers"". Les auteurs de cet amendement souhaitent supprimer cet article qui risque d'aboutir à une financiarisation de l’agriculture. Ces nouveaux dispositifs risquent d'être de nouveaux moyens de contournement de la loi Sempastous. Nous redoutons par ailleurs un risque de renchérissement du prix du foncier. La rentabilité agricole étant limitée, les investisseurs risquent de se rémunérer via l’augmentation du prix du foncier.Par ailleurs, l'impact fiscal de la mesure est insuffisamment évalué: les collectivités locales risquent de voir disparaitre les droits de mutation. Il y aura également 25% d’abattement sur le revenu imposable, ce qui pourrait créer une distorsion de concurrence entre le GFAI et l’agriculteur.Quand au fermier, il ne pourra plus bénéficier de son droit de préemption.
+    >>>
+
+    Répondez uniquement par :
+    Oui
+    Non
+
+    Aucune autre information ou explication n'est requise.""
+",prompt_test_ch
+83,Distorsions de concurrence,Les normes environnementales pénalisent les agriculteurs français en les exposant à la concurrence déloyale d’acteurs étrangers soumis à des standards moins rigoureux et une charge administrative moindre,AMANR5L16PO791932BTC2600P0D1N003156.json,"Le renouvellement des générations en filière équine doit être soutenu par des leviers financiers et fiscaux qui participent à l’attractivité du métier d’agriculteurs et d’agricultrices diversifiés dans le cheval en tenant compte des différents profils d’entrepreneurs et de projets économiquement viables. Ces projets participent en effet, comme indiqué dans la Loi 2005-157 du 23/02/2005 relative au Développement des Territoires Ruraux, à la souveraineté alimentaire mais aussi au développement de l’emploi et de la biodiversité, à l’animation et à l’aménagement des territoires.Le contexte particulier de la filière équine, le développement de la filière, sa professionnalisation passe notamment par l’accompagnement des jeunes agriculteurs.La définition française de l’activité agricole, qui englobe les activités cheval n’étant pas reconnue au niveau communautaire, la Circulaire DGPAAT/SDEA/C2010-3065 du 22 juin 2010 relative à l’installation aidée faisait le distinguo entre les projets "" d’élevage "" et les projets "" activités équestres "".Ainsi la circulaire précisait comment l’installation des jeunes agriculteurs était financée, selon la nature du projet de son projet :- Co-financement par les crédits européens sur le Fonds européen agricole pour le développement rural (FEADER) pour les projets dont les revenus étaient majoritairement issus de l’élevage - Pas de co-financement FEADER et financement par les aides de minimis pour les projets d’installation fondés sur une seule activité équestre et les projets "" mixtes "" (associant une activité équestre et une activité d’élevage dont le revenu prévisionnel tiré de l’élevage était inférieur ou égal à 50 %), et axés vers l’un des domaines suivants : - Exploitation d’un centre équestre - Entraînement de chevaux de courses - Débourrage, dressage et entraînement des chevaux de sport, de loisirs ou de travail Le financement de la Dotation Jeune Agriculteur a perduré sur ce modèle jusqu’à fin 2022, accompagnant ainsi tous les projets économiquement viables.En 2023, la nouvelle programmation de la politique agricole commune 2023-2027 a entraîné dans son sillage un certain nombre de changements notamment en lien avec le Feader. Pour la filière cheval cela s’est traduit par un arrêt, dans la plupart des régions, du financement des projets "" à dominante équestre "" anciennement financés par les aides de minimis.Pourtant, les références technico-économiques démontrent qu’il est quasi impossible de vivre dignement de son métier d’éleveur d’équidés sans être diversifié sur des activités "" équestres "" et ce principalement pendant les premières années d’installation.Force est également de constater que la politique publique d’encouragements pour la filière équine bénéficie aux détenteurs d’équidés, qu’ils soient particuliers amateurs ou agriculteurs.Une telle politique d’encouragements exacerbe la concurrence déloyale que subissent les agriculteurs professionnels du Cheval, prive l’État de recettes fiscales et sociales, participe à la hausse des prix du foncier agricole et ne répond en rien aux besoins des agriculteurs diversifiés dans le Cheval, en termes de souveraineté alimentaire et de transitions économiques, sociales, environnementales ou climatiques.Cibler prioritairement cette politique d’encouragements comme l’ensemble des aides territoriales, nationales ou européennes, ou le Fonds Éperon, vers les porteurs de projet et vers les agriculteurs professionnels du Cheval, à l’instar de ce que déclarait en 2010, Bruno Le Maire, Ministre de l’Agriculture pour "" soutenir les éleveurs et au premier rang d’entre eux, les agriculteurs "" est une nécessité absolue pour préserver l’élevage d’équidés en France.Le présent amendement vise donc à aider les jeunes agriculteurs et plus largement les agriculteurs diversifiés dans le cheval pour qu’ils soient en mesure d’absorber les investissements liés à leur installation ou au développement de leurs activités et d’augmenter par conséquent le nombre de candidats à la reprise des exploitations agricoles maintenues viables, vivables et transmissibles en filière équine.",oui,non,mistral,mistral-medium-latest,"
+    # Instruction :
+
+    Vous êtes un assistant chargé d'analyser la présence d'une idée dans un texte. 
+    
+    Déterminez si l'idée décrite est présente dans le texte, que ce soit de manière explicite ou implicite.
+
+
+    <<<
+    Idée : Distorsions de concurrence
+    >>>
+
+    <<<
+    Description de l'idée : Les normes environnementales pénalisent les agriculteurs français en les exposant à la concurrence déloyale d’acteurs étrangers soumis à des standards moins rigoureux et une charge administrative moindre
+    >>>
+    
+    <<<
+    Texte : Le renouvellement des générations en filière équine doit être soutenu par des leviers financiers et fiscaux qui participent à l’attractivité du métier d’agriculteurs et d’agricultrices diversifiés dans le cheval en tenant compte des différents profils d’entrepreneurs et de projets économiquement viables. Ces projets participent en effet, comme indiqué dans la Loi 2005-157 du 23/02/2005 relative au Développement des Territoires Ruraux, à la souveraineté alimentaire mais aussi au développement de l’emploi et de la biodiversité, à l’animation et à l’aménagement des territoires.Le contexte particulier de la filière équine, le développement de la filière, sa professionnalisation passe notamment par l’accompagnement des jeunes agriculteurs.La définition française de l’activité agricole, qui englobe les activités cheval n’étant pas reconnue au niveau communautaire, la Circulaire DGPAAT/SDEA/C2010-3065 du 22 juin 2010 relative à l’installation aidée faisait le distinguo entre les projets "" d’élevage "" et les projets "" activités équestres "".Ainsi la circulaire précisait comment l’installation des jeunes agriculteurs était financée, selon la nature du projet de son projet :- Co-financement par les crédits européens sur le Fonds européen agricole pour le développement rural (FEADER) pour les projets dont les revenus étaient majoritairement issus de l’élevage - Pas de co-financement FEADER et financement par les aides de minimis pour les projets d’installation fondés sur une seule activité équestre et les projets "" mixtes "" (associant une activité équestre et une activité d’élevage dont le revenu prévisionnel tiré de l’élevage était inférieur ou égal à 50 %), et axés vers l’un des domaines suivants : - Exploitation d’un centre équestre - Entraînement de chevaux de courses - Débourrage, dressage et entraînement des chevaux de sport, de loisirs ou de travail Le financement de la Dotation Jeune Agriculteur a perduré sur ce modèle jusqu’à fin 2022, accompagnant ainsi tous les projets économiquement viables.En 2023, la nouvelle programmation de la politique agricole commune 2023-2027 a entraîné dans son sillage un certain nombre de changements notamment en lien avec le Feader. Pour la filière cheval cela s’est traduit par un arrêt, dans la plupart des régions, du financement des projets "" à dominante équestre "" anciennement financés par les aides de minimis.Pourtant, les références technico-économiques démontrent qu’il est quasi impossible de vivre dignement de son métier d’éleveur d’équidés sans être diversifié sur des activités "" équestres "" et ce principalement pendant les premières années d’installation.Force est également de constater que la politique publique d’encouragements pour la filière équine bénéficie aux détenteurs d’équidés, qu’ils soient particuliers amateurs ou agriculteurs.Une telle politique d’encouragements exacerbe la concurrence déloyale que subissent les agriculteurs professionnels du Cheval, prive l’État de recettes fiscales et sociales, participe à la hausse des prix du foncier agricole et ne répond en rien aux besoins des agriculteurs diversifiés dans le Cheval, en termes de souveraineté alimentaire et de transitions économiques, sociales, environnementales ou climatiques.Cibler prioritairement cette politique d’encouragements comme l’ensemble des aides territoriales, nationales ou européennes, ou le Fonds Éperon, vers les porteurs de projet et vers les agriculteurs professionnels du Cheval, à l’instar de ce que déclarait en 2010, Bruno Le Maire, Ministre de l’Agriculture pour "" soutenir les éleveurs et au premier rang d’entre eux, les agriculteurs "" est une nécessité absolue pour préserver l’élevage d’équidés en France.Le présent amendement vise donc à aider les jeunes agriculteurs et plus largement les agriculteurs diversifiés dans le cheval pour qu’ils soient en mesure d’absorber les investissements liés à leur installation ou au développement de leurs activités et d’augmenter par conséquent le nombre de candidats à la reprise des exploitations agricoles maintenues viables, vivables et transmissibles en filière équine.
+    >>>
+
+    Répondez uniquement par :
+    Oui
+    Non
+
+    Aucune autre information ou explication n'est requise.""
+",prompt_test_ch
+101,Distorsions de concurrence,Les normes environnementales pénalisent les agriculteurs français en les exposant à la concurrence déloyale d’acteurs étrangers soumis à des standards moins rigoureux et une charge administrative moindre,AMANR5L16PO791932BTC2600P0D1N002215.json,"Oublié des politiques agricoles, le secteur des fruits et légumes subit une crise grave et durable. Depuis 1990, les surfaces maraîchères et arboricoles ont diminué de 150000 hectares : c’est un tiers des surfaces qui a disparu en 25 ans. Les importations de fruits et légumes ont, elles, augmenté de 62 % depuis 1990. La moitié des fruits et légumes commercialisés en France est désormais d’origine importée. Le constat n’est guère meilleur pour les produits certifiés Agriculture Biologique : 20 % des légumes bio et 45 % des fruits bio sont importés.Les politiques publiques doivent lever les obstacles à la relocalisation des productions maraîchères et arboricoles sur le territoire grâce à des prix rémunérateurs, une régulation des marchés, la répartition de la ressource en eau et soutien à l’installation. Il en va de notre souveraineté alimentaire dans ce secteur stratégique.",oui,non,mistral,mistral-medium-latest,"
+    # Instruction :
+
+    Vous êtes un assistant chargé d'analyser la présence d'une idée dans un texte. 
+    
+    Déterminez si l'idée décrite est présente dans le texte, que ce soit de manière explicite ou implicite.
+
+
+    <<<
+    Idée : Distorsions de concurrence
+    >>>
+
+    <<<
+    Description de l'idée : Les normes environnementales pénalisent les agriculteurs français en les exposant à la concurrence déloyale d’acteurs étrangers soumis à des standards moins rigoureux et une charge administrative moindre
+    >>>
+    
+    <<<
+    Texte : Oublié des politiques agricoles, le secteur des fruits et légumes subit une crise grave et durable. Depuis 1990, les surfaces maraîchères et arboricoles ont diminué de 150000 hectares : c’est un tiers des surfaces qui a disparu en 25 ans. Les importations de fruits et légumes ont, elles, augmenté de 62 % depuis 1990. La moitié des fruits et légumes commercialisés en France est désormais d’origine importée. Le constat n’est guère meilleur pour les produits certifiés Agriculture Biologique : 20 % des légumes bio et 45 % des fruits bio sont importés.Les politiques publiques doivent lever les obstacles à la relocalisation des productions maraîchères et arboricoles sur le territoire grâce à des prix rémunérateurs, une régulation des marchés, la répartition de la ressource en eau et soutien à l’installation. Il en va de notre souveraineté alimentaire dans ce secteur stratégique.
+    >>>
+
+    Répondez uniquement par :
+    Oui
+    Non
+
+    Aucune autre information ou explication n'est requise.""
+",prompt_test_ch
+117,Distorsions de concurrence,Les normes environnementales pénalisent les agriculteurs français en les exposant à la concurrence déloyale d’acteurs étrangers soumis à des standards moins rigoureux et une charge administrative moindre,AMANR5L16PO791932BTC2600P0D1N003099.json,"Cet amendement du groupe LFI-NUPES propose une réécriture générale de l'article premier, afin de fixer un cap clair à nos politiques publiques agricoles et alimentaires et à nos politiques d'installation-transmission.1) Il propose de définir la souveraineté alimentaire en cohérence avec le droit international, sur la base de la définition issue de la Déclaration des Nations Unies sur les droits des paysans et des autres personnes vivant dans les zones rurales (UNDROP - 2018).2) Il dispose que les politiques publiques concourent à la protection de la souveraineté alimentaire de la France et qu'à cet effet, elles mettent en œuvre les actions nécessaires pour, notamment :- Stopper la disparition des agriculteurs et des exploitations agricoles, et accroître nombre d’exploitants agricoles, en se fixant l’objectif d’atteindre 1 million d’exploitants agricoles à l’horizon 2050- Organiser la régulation du marché foncier, la préservation et la juste distribution des terres agricoles- Assurer que les actifs du secteur agricole tirent un revenu digne de leur métier, notamment en garantissant des prix rémunérateurs aux producteurs au moyen de prix plancher couvrant les coûts de production et en réformant la Politique agricole commune- Réguler les échanges internationaux et lutter contre la concurrence déloyale, notamment par un moratoire sur les accords de libre-échange, la mobilisation des clauses de sauvegarde et en appliquant les mêmes normes de production aux produits locaux et aux produits importés- Développer une agriculture destinée à répondre en premier lieu aux besoins alimentaires nationaux et communautaires en recherchant la proximité et en soutenant les filières déficitaires, notamment le maraîchage, l’arboriculture, les protéines végétales et l’élevage durable tel que le pastoralisme, sans porter préjudice à la souveraineté alimentaire des pays tiers- Accélérer la bifurcation agroécologique, notamment par le développement de systèmes agricoles économes et de l'agriculture biologique- Simplifier et faciliter la vie des agriculteurs, notamment en simplifiant et en favorisant le redressement des exploitations en difficulté, le recours aux droits sociaux, y compris le service de remplacement, les congés, la retraite et la formation professionnelle3) Il redéfinit les objectifs et les priorités de la politique d'installation-transmission en agriculture, en fixant que celle-ci s'appuie sur une gouvernance pluraliste, organise l’accès au foncier agricole dans des conditions transparentes et équitables et oriente en priorité l’installation en agriculture vers des systèmes de production stratégiques pour la souveraineté alimentaire et les transitions écologique et climatique, adaptés aux enjeux de chaque territoire, diversifiés, économes et autonomes en intrants, et notamment vers l’agroécologie dont l’agriculture biologique.4) Il supprime la notion ""d'intérêt général majeur"", facteur d'inquiétudes majeures en termes de régression environnementale, source de flou juridique, et symptôme de l'impasse agroindustrielle dans laquelle nous enfonce le Gouvernement en cherchant à faciliter des projets foncièrement désastreux pour l'avenir de nos systèmes agricoles comme les mega-bassines et les elevages industriels.",non,oui,mistral,mistral-medium-latest,"
+    # Instruction :
+
+    Vous êtes un assistant chargé d'analyser la présence d'une idée dans un texte. 
+    
+    Déterminez si l'idée décrite est présente dans le texte, que ce soit de manière explicite ou implicite.
+
+
+    <<<
+    Idée : Distorsions de concurrence
+    >>>
+
+    <<<
+    Description de l'idée : Les normes environnementales pénalisent les agriculteurs français en les exposant à la concurrence déloyale d’acteurs étrangers soumis à des standards moins rigoureux et une charge administrative moindre
+    >>>
+    
+    <<<
+    Texte : Cet amendement du groupe LFI-NUPES propose une réécriture générale de l'article premier, afin de fixer un cap clair à nos politiques publiques agricoles et alimentaires et à nos politiques d'installation-transmission.1) Il propose de définir la souveraineté alimentaire en cohérence avec le droit international, sur la base de la définition issue de la Déclaration des Nations Unies sur les droits des paysans et des autres personnes vivant dans les zones rurales (UNDROP - 2018).2) Il dispose que les politiques publiques concourent à la protection de la souveraineté alimentaire de la France et qu'à cet effet, elles mettent en œuvre les actions nécessaires pour, notamment :- Stopper la disparition des agriculteurs et des exploitations agricoles, et accroître nombre d’exploitants agricoles, en se fixant l’objectif d’atteindre 1 million d’exploitants agricoles à l’horizon 2050- Organiser la régulation du marché foncier, la préservation et la juste distribution des terres agricoles- Assurer que les actifs du secteur agricole tirent un revenu digne de leur métier, notamment en garantissant des prix rémunérateurs aux producteurs au moyen de prix plancher couvrant les coûts de production et en réformant la Politique agricole commune- Réguler les échanges internationaux et lutter contre la concurrence déloyale, notamment par un moratoire sur les accords de libre-échange, la mobilisation des clauses de sauvegarde et en appliquant les mêmes normes de production aux produits locaux et aux produits importés- Développer une agriculture destinée à répondre en premier lieu aux besoins alimentaires nationaux et communautaires en recherchant la proximité et en soutenant les filières déficitaires, notamment le maraîchage, l’arboriculture, les protéines végétales et l’élevage durable tel que le pastoralisme, sans porter préjudice à la souveraineté alimentaire des pays tiers- Accélérer la bifurcation agroécologique, notamment par le développement de systèmes agricoles économes et de l'agriculture biologique- Simplifier et faciliter la vie des agriculteurs, notamment en simplifiant et en favorisant le redressement des exploitations en difficulté, le recours aux droits sociaux, y compris le service de remplacement, les congés, la retraite et la formation professionnelle3) Il redéfinit les objectifs et les priorités de la politique d'installation-transmission en agriculture, en fixant que celle-ci s'appuie sur une gouvernance pluraliste, organise l’accès au foncier agricole dans des conditions transparentes et équitables et oriente en priorité l’installation en agriculture vers des systèmes de production stratégiques pour la souveraineté alimentaire et les transitions écologique et climatique, adaptés aux enjeux de chaque territoire, diversifiés, économes et autonomes en intrants, et notamment vers l’agroécologie dont l’agriculture biologique.4) Il supprime la notion ""d'intérêt général majeur"", facteur d'inquiétudes majeures en termes de régression environnementale, source de flou juridique, et symptôme de l'impasse agroindustrielle dans laquelle nous enfonce le Gouvernement en cherchant à faciliter des projets foncièrement désastreux pour l'avenir de nos systèmes agricoles comme les mega-bassines et les elevages industriels.
+    >>>
+
+    Répondez uniquement par :
+    Oui
+    Non
+
+    Aucune autre information ou explication n'est requise.""
+",prompt_test_ch
+124,Distorsions de concurrence,Les normes environnementales pénalisent les agriculteurs français en les exposant à la concurrence déloyale d’acteurs étrangers soumis à des standards moins rigoureux et une charge administrative moindre,AMANR5L16PO791932BTC2600P0D1N001391.json,"Cet amendement du groupe LFI-NUPES vise à instaurer un moratoire pour toute nouvelle mise en production de bâtiments nouveaux ou réaménagés d’élevage en cage et ainsi favoriser la transition des exploitations d’élevage vers des pratiques en phase avec les attentes de la société et les enjeux du renouvellement des générations en élevage."" Les systèmes d’élevage en cage se caractérisent à la fois par des densités de peuplement élevées et des niveaux élevés de confinement des animaux et sont souvent utilisés dans des exploitations à grande échelle. Ces caractéristiques des bâtiments d’élevage, ainsi que les pratiques de gestion associées, ont des impacts directs et indirects non seulement sur la santé et le bien-être des animaux, mais aussi sur l’empreinte environnementale et les performances économique et sociale des exploitations "" (IEEP, octobre 2020).A l’heure actuelle, en France, chaque année, plus de 84 millions d’animaux passent une partie, voire la totalité de leur vie en cage. La France se classe 15ème du classement des pays européens en ce qui concerne l’utilisation des cages. Au total, ce sont 28 millions de lapins, 26 millions de poules pondeuses, 900 000 truies et plus de 30 millions de canard, oies, caille et veaux qui sont élevées dans ce mode de logement.Il est désormais urgent de préparer la transition de nos élevages afin de se conformer avec les évolutions règlementaires en cours, notamment à l’échelle de l’Union Européenne, qui s’est engagée à introduire une législation afin de mettre fin aux systèmes d’élevage en cage suite à l’Initiative Citoyenne Européenne "" pour une nouvelle ère sans cage "".Plusieurs pays européens se sont d’ores et déjà engagés dans la transition hors cage, à l’instar de l’Allemagne, premier producteur de porc en Europe, où est entrée en vigueur depuis 2021 une interdiction des cases de gestation et des cages de mise bas pour les truies, pour les nouveaux bâtiments, et progressivement pour les installations existantes, qui interdit les cages pour les lapins à compter de 2024, et pour les poules pondeuses à partir de 2025. Les exploitants ayant investis dans les systèmes hors cage en France (en porc, poules pondeuses ou encore en élevage cunicole), sont, ces derniers mois, mis en difficulté devant la concurrence d’importations ou de productions moins durables en France.Alors que le projet de loi vise à faire émerger une nouvelle génération d’agricultrices et d’agriculteurs en mobilisant le levier de l’installation et de la transmission, mettre en place un moratoire sur les installations en cage permettrait de soutenir les pratiques les plus vertueuses qui sont impactées de plein fouet par la concurrence des productions moins durables. Une fois les agriculteurs installés dans un système de production et une fois que des investissements ont été réalisés, les changements de pratiques peuvent s’avérer plus délicats, que ce soit d’un point de vue technique ou économique. L’installation constitue en ce sens le moment le plus propice pour promouvoir les systèmes les plus vertueux.Ce moratoire pour les bâtiments nouveaux ou réaménagé d’élevage en cage doit permettre de sortir progressivement d’un système qui ne correspond plus aux attentes sociétales ni aux contraintes environnementales et géopolitiques, et de donner des perspectives d’avenir à nos éleveurs.Cet amendement est issu d’une proposition du CIWF.",non,oui,mistral,mistral-medium-latest,"
+    # Instruction :
+
+    Vous êtes un assistant chargé d'analyser la présence d'une idée dans un texte. 
+    
+    Déterminez si l'idée décrite est présente dans le texte, que ce soit de manière explicite ou implicite.
+
+
+    <<<
+    Idée : Distorsions de concurrence
+    >>>
+
+    <<<
+    Description de l'idée : Les normes environnementales pénalisent les agriculteurs français en les exposant à la concurrence déloyale d’acteurs étrangers soumis à des standards moins rigoureux et une charge administrative moindre
+    >>>
+    
+    <<<
+    Texte : Cet amendement du groupe LFI-NUPES vise à instaurer un moratoire pour toute nouvelle mise en production de bâtiments nouveaux ou réaménagés d’élevage en cage et ainsi favoriser la transition des exploitations d’élevage vers des pratiques en phase avec les attentes de la société et les enjeux du renouvellement des générations en élevage."" Les systèmes d’élevage en cage se caractérisent à la fois par des densités de peuplement élevées et des niveaux élevés de confinement des animaux et sont souvent utilisés dans des exploitations à grande échelle. Ces caractéristiques des bâtiments d’élevage, ainsi que les pratiques de gestion associées, ont des impacts directs et indirects non seulement sur la santé et le bien-être des animaux, mais aussi sur l’empreinte environnementale et les performances économique et sociale des exploitations "" (IEEP, octobre 2020).A l’heure actuelle, en France, chaque année, plus de 84 millions d’animaux passent une partie, voire la totalité de leur vie en cage. La France se classe 15ème du classement des pays européens en ce qui concerne l’utilisation des cages. Au total, ce sont 28 millions de lapins, 26 millions de poules pondeuses, 900 000 truies et plus de 30 millions de canard, oies, caille et veaux qui sont élevées dans ce mode de logement.Il est désormais urgent de préparer la transition de nos élevages afin de se conformer avec les évolutions règlementaires en cours, notamment à l’échelle de l’Union Européenne, qui s’est engagée à introduire une législation afin de mettre fin aux systèmes d’élevage en cage suite à l’Initiative Citoyenne Européenne "" pour une nouvelle ère sans cage "".Plusieurs pays européens se sont d’ores et déjà engagés dans la transition hors cage, à l’instar de l’Allemagne, premier producteur de porc en Europe, où est entrée en vigueur depuis 2021 une interdiction des cases de gestation et des cages de mise bas pour les truies, pour les nouveaux bâtiments, et progressivement pour les installations existantes, qui interdit les cages pour les lapins à compter de 2024, et pour les poules pondeuses à partir de 2025. Les exploitants ayant investis dans les systèmes hors cage en France (en porc, poules pondeuses ou encore en élevage cunicole), sont, ces derniers mois, mis en difficulté devant la concurrence d’importations ou de productions moins durables en France.Alors que le projet de loi vise à faire émerger une nouvelle génération d’agricultrices et d’agriculteurs en mobilisant le levier de l’installation et de la transmission, mettre en place un moratoire sur les installations en cage permettrait de soutenir les pratiques les plus vertueuses qui sont impactées de plein fouet par la concurrence des productions moins durables. Une fois les agriculteurs installés dans un système de production et une fois que des investissements ont été réalisés, les changements de pratiques peuvent s’avérer plus délicats, que ce soit d’un point de vue technique ou économique. L’installation constitue en ce sens le moment le plus propice pour promouvoir les systèmes les plus vertueux.Ce moratoire pour les bâtiments nouveaux ou réaménagé d’élevage en cage doit permettre de sortir progressivement d’un système qui ne correspond plus aux attentes sociétales ni aux contraintes environnementales et géopolitiques, et de donner des perspectives d’avenir à nos éleveurs.Cet amendement est issu d’une proposition du CIWF.
+    >>>
+
+    Répondez uniquement par :
+    Oui
+    Non
+
+    Aucune autre information ou explication n'est requise.""
+",prompt_test_ch
+235,droit à l'erreur agriculteur / allégement des poursuites et des peines en cas de normes contradictoires,"L’exercice agricole est soumis à un trop grand nombre de normes, parfois contradictoires, ce qui peut entraîner des erreurs involontaires de la part des agriculteurs. Il est donc nécessaire de leur accorder un droit à l’erreur, afin qu’ils puissent corriger leurs fautes sans être immédiatement sanctionnés. Il faut parfois une nécessité d'absence de sanctions en cas de règles contradictoires.",AMANR5L16PO791932BTC2600P0D1N004452.json,"Le présent amendement substitue à l’habilitation à légiférer par voie d’ordonnance prévue par l’article 13 du projet de loi une disposition ayant le même objet, qui vise à adapter le régime de répression des atteintes à la conservation d’espèces animales non domestiques, d’espèces végétales non cultivées, d’habitats naturels et de sites d’intérêt géologique prévu à l’article L. 415‑3 du code de l’environnement.A cet effet, il réserve la qualification de délit aux cas dans lesquels les faits ont été commis de manière intentionnelle.Il présume en outre que toute intentionnalité est exclue lorsque l’atteinte est commise dans le cadre de l’exécution d’une obligation légale ou réglementaire, lorsque la personne concernée se conforme aux prescriptions assortissant une autorisation administrative ou met en œuvre des actions prévues par des documents de gestion mentionnés à l’article L. 122‑3 du code forestier.Dans tous les cas, et notamment lorsque les faits ont été commis sans intentionnalité, il prévoit une nouvelle mesure administrative consistant en la réalisation d’un stage de sensibilisation aux enjeux de l’environnement. Cette mesure aurait la particularité de pouvoir être prononcée en l’absence d’une mise en demeure de l’intéressé à se mettre en conformité avec la réglementation. L’autorité administrative disposera ainsi d’un panel plus complet et permettant une meilleure réactivité.L’amendement prévoit enfin que l’action publique peut être éteinte par une transaction proposée par l'administration, acceptée par l'auteur de l'infraction et homologuée par le procureur de la République. Son intention est d’encourager le recours à la transaction pénale, notamment lorsque l’atteinte à la conservation des espèces animales et végétales, des habitats naturels et des sites géologiques résulte de l’entretien d’une haie en dehors des périodes autorisées.",oui,non,mistral,mistral-medium-latest,"
+    # Instruction :
+
+    Vous êtes un assistant chargé d'analyser la présence d'une idée dans un texte. 
+    
+    Déterminez si l'idée décrite est présente dans le texte, que ce soit de manière explicite ou implicite.
+
+
+    <<<
+    Idée : droit à l'erreur agriculteur / allégement des poursuites et des peines en cas de normes contradictoires
+    >>>
+
+    <<<
+    Description de l'idée : L’exercice agricole est soumis à un trop grand nombre de normes, parfois contradictoires, ce qui peut entraîner des erreurs involontaires de la part des agriculteurs. Il est donc nécessaire de leur accorder un droit à l’erreur, afin qu’ils puissent corriger leurs fautes sans être immédiatement sanctionnés. Il faut parfois une nécessité d'absence de sanctions en cas de règles contradictoires.
+    >>>
+    
+    <<<
+    Texte : Le présent amendement substitue à l’habilitation à légiférer par voie d’ordonnance prévue par l’article 13 du projet de loi une disposition ayant le même objet, qui vise à adapter le régime de répression des atteintes à la conservation d’espèces animales non domestiques, d’espèces végétales non cultivées, d’habitats naturels et de sites d’intérêt géologique prévu à l’article L. 415‑3 du code de l’environnement.A cet effet, il réserve la qualification de délit aux cas dans lesquels les faits ont été commis de manière intentionnelle.Il présume en outre que toute intentionnalité est exclue lorsque l’atteinte est commise dans le cadre de l’exécution d’une obligation légale ou réglementaire, lorsque la personne concernée se conforme aux prescriptions assortissant une autorisation administrative ou met en œuvre des actions prévues par des documents de gestion mentionnés à l’article L. 122‑3 du code forestier.Dans tous les cas, et notamment lorsque les faits ont été commis sans intentionnalité, il prévoit une nouvelle mesure administrative consistant en la réalisation d’un stage de sensibilisation aux enjeux de l’environnement. Cette mesure aurait la particularité de pouvoir être prononcée en l’absence d’une mise en demeure de l’intéressé à se mettre en conformité avec la réglementation. L’autorité administrative disposera ainsi d’un panel plus complet et permettant une meilleure réactivité.L’amendement prévoit enfin que l’action publique peut être éteinte par une transaction proposée par l'administration, acceptée par l'auteur de l'infraction et homologuée par le procureur de la République. Son intention est d’encourager le recours à la transaction pénale, notamment lorsque l’atteinte à la conservation des espèces animales et végétales, des habitats naturels et des sites géologiques résulte de l’entretien d’une haie en dehors des périodes autorisées.
+    >>>
+
+    Répondez uniquement par :
+    Oui
+    Non
+
+    Aucune autre information ou explication n'est requise.""
+",prompt_test_ch
+258,droit à l'erreur agriculteur / allégement des poursuites et des peines en cas de normes contradictoires,"L’exercice agricole est soumis à un trop grand nombre de normes, parfois contradictoires, ce qui peut entraîner des erreurs involontaires de la part des agriculteurs. Il est donc nécessaire de leur accorder un droit à l’erreur, afin qu’ils puissent corriger leurs fautes sans être immédiatement sanctionnés. Il faut parfois une nécessité d'absence de sanctions en cas de règles contradictoires.",AMANR5L16PO791932BTC2600P0D1N004687.json,"Le présent amendement substitue à l’habilitation à légiférer par voie d’ordonnance prévue par l’article 13 du projet de loi une disposition ayant le même objet, qui vise à adapter le régime de répression des atteintes à la conservation d’espèces animales non domestiques, d’espèces végétales non cultivées, d’habitats naturels et de sites d’intérêt géologique prévu à l’article L. 415‑3 du code de l’environnement.A cet effet, il réserve la qualification de délit aux cas dans lesquels les faits ont été commis de manière intentionnelle ou par négligence grave.Il présume en outre que toute intentionnalité ou négligence grave sont exclues lorsque l’atteinte est commise dans le cadre de l’exécution d’une obligation légale ou réglementaire, lorsque la personne concernée se conforme aux prescriptions assortissant une autorisation administrative ou met en œuvre des actions prévues par des documents de gestion mentionnés à l’article L. 122‑3 du code forestier.Il alourdit corrélativement la peine encourue pour ce délit par les personnes morales, en la portant à une amende d’un maximum de 24 millions d’euros, conformément à la proposition de directive du Parlement européen et du Conseil relative à la protection de l’environnement par le droit pénal dans sa rédaction résultant de la résolution du Parlement européen du 27 février 2024.Dans tous les cas, et notamment lorsque les faits ont été commis sans intentionnalité ni négligence grave, il prévoit une nouvelle sanction administrative consistant en la réalisation d’un stage de sensibilisation aux enjeux de l’environnement sans préjudice des autres mesures pouvant être prononcées sur le fondement des articles L. 171-7 et L. 171-8 du code de l’environnement.Il prévoit enfin que l’action publique peut être éteinte par une transaction proposée par l'administration, acceptée par l'auteur de l'infraction et homologuée par le procureur de la République. Son intention est d’encourager le recours à la transaction pénale, notamment lorsque l’atteinte à la conservation des espèces animales et végétales, des habitats naturels et des sites géologiques résulte de l’entretien d’une haie en dehors des périodes autorisées.",oui,non,mistral,mistral-medium-latest,"
+    # Instruction :
+
+    Vous êtes un assistant chargé d'analyser la présence d'une idée dans un texte. 
+    
+    Déterminez si l'idée décrite est présente dans le texte, que ce soit de manière explicite ou implicite.
+
+
+    <<<
+    Idée : droit à l'erreur agriculteur / allégement des poursuites et des peines en cas de normes contradictoires
+    >>>
+
+    <<<
+    Description de l'idée : L’exercice agricole est soumis à un trop grand nombre de normes, parfois contradictoires, ce qui peut entraîner des erreurs involontaires de la part des agriculteurs. Il est donc nécessaire de leur accorder un droit à l’erreur, afin qu’ils puissent corriger leurs fautes sans être immédiatement sanctionnés. Il faut parfois une nécessité d'absence de sanctions en cas de règles contradictoires.
+    >>>
+    
+    <<<
+    Texte : Le présent amendement substitue à l’habilitation à légiférer par voie d’ordonnance prévue par l’article 13 du projet de loi une disposition ayant le même objet, qui vise à adapter le régime de répression des atteintes à la conservation d’espèces animales non domestiques, d’espèces végétales non cultivées, d’habitats naturels et de sites d’intérêt géologique prévu à l’article L. 415‑3 du code de l’environnement.A cet effet, il réserve la qualification de délit aux cas dans lesquels les faits ont été commis de manière intentionnelle ou par négligence grave.Il présume en outre que toute intentionnalité ou négligence grave sont exclues lorsque l’atteinte est commise dans le cadre de l’exécution d’une obligation légale ou réglementaire, lorsque la personne concernée se conforme aux prescriptions assortissant une autorisation administrative ou met en œuvre des actions prévues par des documents de gestion mentionnés à l’article L. 122‑3 du code forestier.Il alourdit corrélativement la peine encourue pour ce délit par les personnes morales, en la portant à une amende d’un maximum de 24 millions d’euros, conformément à la proposition de directive du Parlement européen et du Conseil relative à la protection de l’environnement par le droit pénal dans sa rédaction résultant de la résolution du Parlement européen du 27 février 2024.Dans tous les cas, et notamment lorsque les faits ont été commis sans intentionnalité ni négligence grave, il prévoit une nouvelle sanction administrative consistant en la réalisation d’un stage de sensibilisation aux enjeux de l’environnement sans préjudice des autres mesures pouvant être prononcées sur le fondement des articles L. 171-7 et L. 171-8 du code de l’environnement.Il prévoit enfin que l’action publique peut être éteinte par une transaction proposée par l'administration, acceptée par l'auteur de l'infraction et homologuée par le procureur de la République. Son intention est d’encourager le recours à la transaction pénale, notamment lorsque l’atteinte à la conservation des espèces animales et végétales, des habitats naturels et des sites géologiques résulte de l’entretien d’une haie en dehors des périodes autorisées.
+    >>>
+
+    Répondez uniquement par :
+    Oui
+    Non
+
+    Aucune autre information ou explication n'est requise.""
+",prompt_test_ch
