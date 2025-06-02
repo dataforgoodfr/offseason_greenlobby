@@ -158,7 +158,6 @@ if __name__ == "__main__":
     parser.add_argument('--temperature', type=str, default=0, help='Temperature of model.')
     parser.add_argument('--metrics_param', type=list_of_strings, default=METRICS, help='List of metrics to plot. Default ["accuracy", "precision", "recall","f1_score"]')
 
-
     args = parser.parse_args()
 
     main(

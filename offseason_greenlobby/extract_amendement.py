@@ -4,6 +4,7 @@ import csv
 import html
 import re
 import argparse
+from utils.utils import get_gp,get_gp_nom,get_id_nom,get_id_prenom
 
 
 
@@ -40,9 +41,26 @@ def extract_expose_sommaire(json_path, target_article):
     except Exception as e:
         return None, f"Erreur: {e}"
 
-def process_folder(input_folder, output_csv, target_article):
+def process_folder(input_folder, output_csv, target_article, folder_acteurs):
     with open(output_csv, mode='w', newline='', encoding='utf-8') as csvfile:
-        fieldnames = ['Nom du fichier', 'ExposeSommaire','typeAuteur','acteurRef','groupePolitiqueRef','article_courte','type',"dispositif"]
+        fieldnames = [
+                'nom_du_fichier', 
+                'expose_sommaire',
+                'dispositif',
+                'article_courte',
+                'article',
+                'type_amendement',
+
+                'groupe_politique_ref',
+                'groupe_politique',
+                'groupe_politique_nom',
+
+                'type_auteur',
+                'acteur_ref',
+                'acteur_nom',
+                'acteur_prenom',
+                'acteur_denom'
+                ]
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
         
@@ -59,18 +77,47 @@ def process_folder(input_folder, output_csv, target_article):
                     expose_sommaire, status, typeAuteur , acteurRef, groupePolitiqueRef, article_courte, typee,dispositif = extract_expose_sommaire(json_path, target_article)
                     
                     if status == "OK":
-                        writer.writerow({'Nom du fichier': file, 
-                                         'ExposeSommaire': expose_sommaire,
-                                         'typeAuteur': typeAuteur,
-                                         'acteurRef': acteurRef,
-                                         'groupePolitiqueRef': groupePolitiqueRef,
-                                         'article_courte': article_courte,
-                                         'type': typee,
-                                         'dispositif':dispositif
-                                         })
-                        print(f"[{count}] OK : {file}")
-                        count_ok += 1
-                        count += 1
+                        if folder_acteurs:
+                            acteurs = folder_acteurs + "/acteurs/"
+                            organes = folder_acteurs + "/organes/"
+                            acteur_nom = get_id_nom(acteurs,acteurRef) if len(acteurRef) == 8 else "Inconnu"
+                            acteur_prenom = get_id_prenom(acteurs,acteurRef) if len(acteurRef) == 8 else "Inconnu"
+                            acteur_denom = acteur_nom + ' ' + acteur_prenom
+                            writer.writerow({
+                                        'nom_du_fichier':file, 
+                                        'expose_sommaire':expose_sommaire,
+                                        'dispositif':dispositif,
+                                        'article_courte':article_courte,
+                                        'article':re.findall(r'\d+', article_courte)[0] if len(re.findall(r'\d+', article_courte))> 0 else "1",
+                                        'type_amendement':typee,
+
+                                        'groupe_politique_ref':groupePolitiqueRef,
+                                        'groupe_politique':get_gp(organes,groupePolitiqueRef) if len(groupePolitiqueRef) == 8 else "Inconnu",
+                                        'groupe_politique_nom':get_gp_nom(organes,groupePolitiqueRef) if len(groupePolitiqueRef) == 8 else "Inconnu",
+
+                                        'type_auteur':typeAuteur,
+                                        'acteur_ref':acteurRef,
+                                        'acteur_nom':acteur_nom,
+                                        'acteur_prenom':acteur_prenom,
+                                        'acteur_denom': acteur_denom
+
+                                            })
+                            print(f"[{count}] OK : {file}")
+                            count_ok += 1
+                            count += 1
+                        else:
+                            writer.writerow({
+                                        'nom_du_fichier':file, 
+                                        'expose_sommaire':expose_sommaire,
+                                        'dispositif':dispositif,
+                                        'article_courte':article_courte,
+                                        'type_amendement':typee,
+                                        'groupe_politique_ref':groupePolitiqueRef,
+                                        'type_auteur':typeAuteur,
+                                            })
+                            print(f"[{count}] OK : {file}")
+                            count_ok += 1
+                            count += 1
                     elif status == "Non article ciblé":
                         print(f"⛔ Non article ciblé : {file}")
                         count_non_article_ciblé += 1
@@ -90,10 +137,11 @@ def process_folder(input_folder, output_csv, target_article):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Extraction des exposés sommaires d’un article donné.")
-    parser.add_argument("input_folder", help="Chemin du dossier contenant les fichiers JSON")
-    parser.add_argument("output_csv", help="Chemin du fichier CSV de sortie")
-    parser.add_argument("article", type=int, help="Numéro de l'article à filtrer")
+    parser.add_argument("--input_folder", help="Chemin du dossier contenant les fichiers JSON")
+    parser.add_argument("--output_csv", help="Chemin du fichier CSV de sortie")
+    parser.add_argument("--article", type=int, help="Numéro de l'article à filtrer")
+    parser.add_argument("--folder_acteurs", help="Chemin du dossier contenant données des députés/groupes parlementaires de la legislature")
     args = parser.parse_args()
 
-    process_folder(args.input_folder, args.output_csv, args.article)
+    process_folder(args.input_folder, args.output_csv, args.article, args.folder_acteurs)
     print(f"Le fichier CSV a été généré avec succès : {args.output_csv}")
