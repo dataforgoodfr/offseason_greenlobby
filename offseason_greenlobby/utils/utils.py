@@ -114,3 +114,37 @@ def extract_until_period(text: str, search: str) -> str:
     end = next_period_index + 1 if next_period_index != -1 else len(text)
 
     return text[start:end].strip()
+
+
+import requests
+from bs4 import BeautifulSoup
+
+def get_gp_senat(url):
+    print(url)
+    # Télécharger le contenu de la page
+    response = requests.get(url)
+    response.encoding = 'utf-8'
+    if response.status_code == 200:
+        html_content = response.text
+
+        # Parser le contenu HTML avec BeautifulSoup
+        soup = BeautifulSoup(html_content, 'html.parser')
+        # Rechercher la section contenant les informations sur le groupe politique
+        # Cela dépend de la structure de la page ; ici, nous cherchons une section avec un titre spécifique
+        sections = soup.find_all('section')
+        """
+        for child in soup.descendants:
+            if child.name:
+                print(child.name)
+        """
+
+        for tag in soup.find_all('li'):
+            if ("groupe" in tag.text):
+                print(tag.text)
+                return tag.text
+            
+        for tag in soup.find_all('dd'):
+            if ("Membre du  Groupe" in tag.text) or ("Membre du Groupe" in tag.text):
+                print(tag.text)
+                return tag.text
+            

@@ -103,43 +103,43 @@ def main(model_name, provider, input_file, prompt, batch_size, delay, temperatur
     print(f"Predictions saved to {output_file_pred}")
 
     # Evaluation
-    y_true = data[COL_LABEL].str.lower()
-    y_pred = data[COL_PREDICTIONS].str.lower()
-    y_true = [str(x) for x in y_true]
-    y_pred = [str(x) for x in y_pred]
+    if COL_LABEL in data.columns:
+        y_true = data[COL_LABEL].str.lower()
+        y_pred = data[COL_PREDICTIONS].str.lower()
+        y_true = [str(x) for x in y_true]
+        y_pred = [str(x) for x in y_pred]
 
-    # Compute the desired metrics 
-    metrics = evaluate_classification(y_true, y_pred)
+        # Compute the desired metrics 
+        metrics = evaluate_classification(y_true, y_pred)
 
-    metrics["confusion_matrix"] = [confusion_matrix(y_pred=y_pred,y_true=y_true,labels=["oui","non"])]
-    metrics["prompt"] = [data['prompt_name'].values[0]]
-    metrics["model"] = [model_name]
-    metrics["temperature"] = [temperature]
-    metrics["y_true"] = [y_true]
-    metrics["y_pred"] = [y_pred]
-    metrics["execution_time"] = [EXEC_TIME]
-    metrics["time_eval"] = [datetime.now()]
+        metrics["confusion_matrix"] = [confusion_matrix(y_pred=y_pred,y_true=y_true,labels=["oui","non"])]
+        metrics["prompt"] = [data['prompt_name'].values[0]]
+        metrics["model"] = [model_name]
+        metrics["temperature"] = [temperature]
+        metrics["y_true"] = [y_true]
+        metrics["y_pred"] = [y_pred]
+        metrics["execution_time"] = [EXEC_TIME]
+        metrics["time_eval"] = [datetime.now()]
 
-    # Plot
-    print("Confusion matrix:")
-    print(confusion_matrix(y_pred=y_pred,y_true=y_true,labels=["oui","non"]))
-    for metric in metrics_param:
-        print(f"{metric}: {metrics[metric][0]:.4f}")
+        # Plot
+        print("Confusion matrix:")
+        print(confusion_matrix(y_pred=y_pred,y_true=y_true,labels=["oui","non"]))
+        for metric in metrics_param:
+            print(f"{metric}: {metrics[metric][0]:.4f}")
 
-
-    # If the file already exists
-    if os.path.isfile(output_file_eval):
-        df_res = pd.read_csv(
-            output_file_eval)
-        for metric, value in metrics.items():
-            metrics[metric] = value[0]
-        df_res.loc[-1] = metrics
-        df_res.to_csv(output_file_eval,index=0)
-    # Else create it
-    else:
-        pd.DataFrame.from_dict(metrics).to_csv(
-            output_file_eval,
-            index=0,)
+        # If the file already exists
+        if os.path.isfile(output_file_eval):
+            df_res = pd.read_csv(
+                output_file_eval)
+            for metric, value in metrics.items():
+                metrics[metric] = value[0]
+            df_res.loc[-1] = metrics
+            df_res.to_csv(output_file_eval,index=0)
+        # Else create it
+        else:
+            pd.DataFrame.from_dict(metrics).to_csv(
+                output_file_eval,
+                index=0,)
 
 if __name__ == "__main__":
     """
